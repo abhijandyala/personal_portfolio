@@ -1,0 +1,15 @@
+{
+  "name": "abhi-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Abhi Jandyala",
+  "scripts": {
+    "start": "serve -s . -l $PORT",
+    "dev": "serve -s . -l 3000"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
