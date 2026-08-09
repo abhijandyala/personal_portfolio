@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Custom Cursor
   const cursor = document.querySelector('.cursor');
-  const hoverElements = document.querySelectorAll('a, button, .stack-item, .project, .info-card');
+  const hoverElements = document.querySelectorAll('a, button, .stack-item, .work-card, .win-card, .info-card');
   
   if (window.matchMedia('(hover: hover)').matches && cursor) {
     document.addEventListener('mousemove', (e) => {
@@ -128,35 +128,26 @@ document.addEventListener('DOMContentLoaded', () => {
       transform: translateY(0) !important;
     }
     
-    .project {
+    .work-card,
+    .win-card {
       opacity: 0;
       transform: translateY(30px);
-      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s;
     }
     
-    .section.visible .project {
+    .section.visible .work-card,
+    .section.visible .win-card {
       opacity: 1;
       transform: translateY(0);
     }
     
-    .section.visible .project:nth-child(1) { transition-delay: 0.1s; }
-    .section.visible .project:nth-child(2) { transition-delay: 0.2s; }
-    .section.visible .project:nth-child(3) { transition-delay: 0.3s; }
-    
-    .exp-item {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    
-    .section.visible .exp-item {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .section.visible .exp-item:nth-child(1) { transition-delay: 0.1s; }
-    .section.visible .exp-item:nth-child(2) { transition-delay: 0.2s; }
-    .section.visible .exp-item:nth-child(3) { transition-delay: 0.3s; }
+    .section.visible .work-card:nth-child(1) { transition-delay: 0.1s; }
+    .section.visible .work-card:nth-child(2) { transition-delay: 0.2s; }
+    .section.visible .wins-featured .win-card:nth-child(1) { transition-delay: 0.1s; }
+    .section.visible .wins-featured .win-card:nth-child(2) { transition-delay: 0.2s; }
+    .section.visible .wins-grid .win-card:nth-child(1) { transition-delay: 0.2s; }
+    .section.visible .wins-grid .win-card:nth-child(2) { transition-delay: 0.3s; }
+    .section.visible .wins-grid .win-card:nth-child(3) { transition-delay: 0.4s; }
     
     
     .info-card {
@@ -231,20 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('mouseleave', () => {
       btn.style.transform = 'translate(0, 0)';
     });
-  });
-
-  // Project image hover effect
-  const projects = document.querySelectorAll('.project');
-  projects.forEach(project => {
-    const image = project.querySelector('.project-image');
-    if (image) {
-      project.addEventListener('mouseenter', () => {
-        image.style.transform = 'scale(1.02)';
-      });
-      project.addEventListener('mouseleave', () => {
-        image.style.transform = 'scale(1)';
-      });
-    }
   });
 
   // Info card hover effect
