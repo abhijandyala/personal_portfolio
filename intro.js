@@ -194,6 +194,19 @@
       drawTiles(lctx);
     }
 
+    // phones: the name is small and some clips are dim, so a faint outline keeps every letter readable
+    if (W < 600) {
+      lctx.globalCompositeOperation = 'source-over';
+      lctx.globalAlpha = 0.45 * (1 - prog(t, T.ink0, T.ink1));
+      set(lctx, z.s, z.tx, z.ty);
+      lctx.strokeStyle = '#fff';
+      lctx.lineWidth = 1.2 / z.s;              // about 1.2 px on screen at any zoom
+      lctx.font = `${fontPx}px ${FONT}`;
+      lctx.textBaseline = 'alphabetic';
+      for (const l of letters) lctx.strokeText(l.ch, l.x, l.base);
+      lctx.globalCompositeOperation = 'source-atop';
+    }
+
     const inkA = prog(t, T.ink0, T.ink1);
     if (inkA > 0) {
       lctx.globalAlpha = easeInOut(inkA);
@@ -516,8 +529,9 @@
 
   // ---------- boot ----------
 
-  function setSources(video, base) {
-    video.innerHTML = `<source src="${base}.webm" type="video/webm"><source src="${base}.mp4" type="video/mp4">`;
+  // v: bump when a video is rebuilt so browsers don't keep playing a cached copy
+  function setSources(video, base, v = 1) {
+    video.innerHTML = `<source src="${base}.webm?v=${v}" type="video/webm"><source src="${base}.mp4?v=${v}" type="video/mp4">`;
     video.load();
   }
 
@@ -590,7 +604,7 @@
 
     const orient = innerWidth / innerHeight < 0.9 ? 'port' : 'land';
     setSources(montage, `assets/intro/montage-${orient}`);
-    setSources(tiles, 'assets/intro/letters');
+    setSources(tiles, 'assets/intro/letters', 2);   // v2: new B and second-A shots
     trackLoading([montage, tiles]);
 
     const timeout = new Promise((r) => setTimeout(r, 10000));
