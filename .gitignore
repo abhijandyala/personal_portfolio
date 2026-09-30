@@ -4,3 +4,4 @@
 .rocketride/
 source-videos/
 node_modules/
+__pycache__/
