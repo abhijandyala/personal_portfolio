@@ -1,0 +1,64 @@
+{
+ "hub_stack": [
+  "03",
+  "08",
+  "09"
+ ],
+ "clips": [
+  {
+   "id": "01",
+   "title": "Day 1 · Landing in SF",
+   "instagram": "https://www.instagram.com/p/Da3YJ3NNA2j/"
+  },
+  {
+   "id": "02",
+   "title": "Day 2 · Travel day",
+   "instagram": "https://www.instagram.com/p/Da6BZGmy2qq/"
+  },
+  {
+   "id": "03",
+   "title": "Day 3 · GenAI Summit",
+   "instagram": "https://www.instagram.com/p/Da-_R8NBvqW/"
+  },
+  {
+   "id": "04",
+   "title": "Days 4–5 · The city",
+   "instagram": "https://www.instagram.com/p/DbHqmS0TNgR/"
+  },
+  {
+   "id": "05",
+   "title": "Day 6 · AMD + AI Power Hour",
+   "instagram": "https://www.instagram.com/p/DbO1wjuy0p8/"
+  },
+  {
+   "id": "06",
+   "title": "Hackathon build day",
+   "instagram": "https://www.instagram.com/p/DbV3CyPt-Qn/"
+  },
+  {
+   "id": "07",
+   "title": "Agents You Love 2",
+   "instagram": "https://www.instagram.com/p/Dbdan4iujvk/"
+  },
+  {
+   "id": "08",
+   "title": "UC Berkeley",
+   "instagram": "https://www.instagram.com/p/Dbma0xONcnj/"
+  },
+  {
+   "id": "09",
+   "title": "Last day · Memory Meets Motion",
+   "instagram": "https://www.instagram.com/p/DbrW3ZrObHU/"
+  },
+  {
+   "id": "10",
+   "title": "The recap",
+   "instagram": "https://www.instagram.com/p/Db9MpPLNCeU/"
+  },
+  {
+   "id": "11",
+   "title": "Why I'm building ValiqAI",
+   "instagram": "https://www.instagram.com/p/DdZO3OERrzR/"
+  }
+ ]
+}

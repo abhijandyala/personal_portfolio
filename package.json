@@ -4,7 +4,7 @@
   "description": "Personal portfolio website for Abhi Jandyala",
   "scripts": {
     "start": "serve -s . -l $PORT",
-    "dev": "serve -s . -l 3000"
+    "dev": "serve -s . -l 4321"
   },
   "dependencies": {
     "serve": "^14.2.1"

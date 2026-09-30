@@ -1,0 +1,195 @@
+{
+  "projects": [
+    {
+      "id": "speaknow",
+      "title": "SpeakNow",
+      "dates": "Aug 2026 – Present",
+      "card": "assets/projects/speaknow/card.jpg",
+      "logo": "assets/projects/speaknow/logo.png",
+      "theme": {
+        "bg": "#0b0b0d",
+        "fg": "#f3eee6",
+        "muted": "rgba(243, 238, 230, 0.62)",
+        "accent": "#c9a056"
+      },
+      "summary": "SpeakNow is an AI-powered public speaking platform that helps people practice speeches and get detailed feedback on their performance.",
+      "bullets": [
+        "Analyzes recorded speeches and gives feedback on delivery, pacing, clarity, and overall performance.",
+        "Uses a panel of 6 AI judges to evaluate each speech from different perspectives and create a detailed report.",
+        "Built an end-to-end system for recording, analysis, scoring, feedback, and progress tracking."
+      ],
+      "closing": "Built to make high-quality speaking feedback available anytime you want to practice.",
+      "panelTitle": "The panel",
+      "panel": [
+        {
+          "img": "assets/projects/speaknow/panel/strict_rubric.jpg",
+          "label": "Rubric"
+        },
+        {
+          "img": "assets/projects/speaknow/panel/confused_audience.jpg",
+          "label": "Clarity"
+        },
+        {
+          "img": "assets/projects/speaknow/panel/skeptical.jpg",
+          "label": "Skeptic"
+        },
+        {
+          "img": "assets/projects/speaknow/panel/impact.jpg",
+          "label": "Impact"
+        },
+        {
+          "img": "assets/projects/speaknow/panel/responsible_ai.jpg",
+          "label": "Responsible AI"
+        },
+        {
+          "img": "assets/projects/speaknow/panel/timing_coach.jpg",
+          "label": "Timing"
+        }
+      ],
+      "links": [
+        {
+          "label": "Visit usespeaknow.com",
+          "url": "https://www.usespeaknow.com/",
+          "primary": true
+        }
+      ],
+      "oneliner": "Practice speeches in front of a panel of 6 AI judges and get a scored report."
+    },
+    {
+      "id": "aegis",
+      "title": "Aegis",
+      "tagline": "Maritime safety & anomaly detection",
+      "card": "assets/projects/aegis/card.jpg",
+      "hero": "assets/projects/aegis/hero.jpg",
+      "logo": "assets/projects/aegis/logo.png",
+      "mark": "assets/projects/aegis/shield.png",
+      "theme": {
+        "bg": "#0a0c10",
+        "fg": "#f3f5f7",
+        "muted": "rgba(243, 245, 247, 0.62)",
+        "accent": "#5192f0"
+      },
+      "summary": "Aegis is a maritime safety and anomaly detection platform that tracks vessel activity and identifies suspicious behavior in real time.",
+      "bullets": [
+        "Uses live AIS data to track vessels, detect identity changes, and flag dark-vessel activity.",
+        "Built predictive tracking with Kalman filtering and 600-run Monte Carlo simulations to estimate where vessels are heading.",
+        "Detects geofence violations and compares predicted movement against actual vessel behavior to surface risk alerts."
+      ],
+      "closing": "Built to turn complex maritime data into clear, actionable safety alerts.",
+      "links": [
+        {
+          "label": "Open live demo",
+          "url": "https://aegisisr.up.railway.app/",
+          "primary": true
+        },
+        {
+          "label": "Info deck",
+          "url": "https://drive.google.com/file/d/11gAB-UwsmMCVxSZcbN3Ii0gUeclDGPiL/view"
+        }
+      ],
+      "video": {
+        "title": "Demo video",
+        "youtube": "1ulAKw4xIjA",
+        "thumb": "assets/projects/aegis/demo-thumb.jpg"
+      },
+      "oneliner": "Tracks ships in real time and flags dark vessels and suspicious behavior.",
+      "dates": "Sep 2026"
+    },
+    {
+      "id": "ghostthread",
+      "title": "GhostThread",
+      "dates": "Jul 2026 – Jul 2026",
+      "card": "assets/projects/ghostthread/card.jpg",
+      "hero": "assets/projects/ghostthread/hero.jpg",
+      "theme": {
+        "bg": "#0a0a0b",
+        "fg": "#f1f2f2",
+        "muted": "rgba(241, 242, 242, 0.6)",
+        "accent": "#38b2a0"
+      },
+      "summary": "GhostThread is an AI agent that turns team feedback into actionable development work across the tools teams already use.",
+      "bullets": [
+        "Connects Slack, Gmail, GitHub, and Linear to find feedback and turn it into development tasks.",
+        "Won 1st Place in AI Agents and 2× 1st Place in DevTools at Agents Love You 2.",
+        "Automatically creates Linear tickets, makes code changes, and pushes updates to GitHub."
+      ],
+      "closing": "Built to turn scattered feedback into shipped improvements with less manual work.",
+      "video": {
+        "title": "Demo video",
+        "youtube": "glwMQffAe0c",
+        "thumb": "assets/projects/ghostthread/demo-thumb.jpg"
+      },
+      "oneliner": "AI agent that turns team feedback into tickets, code changes, and PRs."
+    },
+    {
+      "id": "chancify",
+      "title": "ChancifyAI",
+      "dates": "Jul 2025 – Jan 2026",
+      "card": "assets/projects/chancify/card.jpg",
+      "cardLabel": false,
+      "hero": "assets/projects/chancify/hero.jpg",
+      "mark": "assets/projects/chancify/mark.png",
+      "wordmark": "sans",
+      "theme": {
+        "bg": "#eaf2ff",
+        "fg": "#0f2350",
+        "muted": "rgba(15, 35, 80, 0.68)",
+        "accent": "#296ef0",
+        "shadow": "rgba(23, 42, 85, 0.2)"
+      },
+      "summary": "ChancifyAI helps students better understand their chances of getting into college using AI and real admissions data.",
+      "bullets": [
+        "Built predictions using real college admissions data to give students personalized acceptance estimates.",
+        "Reached 350+ users and placed 4th in the 2026 Congressional App Challenge.",
+        "Built college search, profile analysis, admissions predictions, and an AI college assistant."
+      ],
+      "closing": "Built to make the college admissions process simpler and less confusing.",
+      "links": [
+        {
+          "label": "Visit chancifyai.com",
+          "url": "https://www.chancifyai.com/",
+          "primary": true
+        }
+      ],
+      "video": {
+        "title": "Demo video",
+        "youtube": "zDyCpdLhIVY",
+        "thumb": "assets/projects/chancify/demo-thumb.jpg"
+      },
+      "oneliner": "Personalized college acceptance odds built on real admissions data."
+    },
+    {
+      "id": "meteor",
+      "title": "Meteor Madness",
+      "dates": "Nov 2025 – Nov 2025",
+      "tagline": "NASA Space Apps",
+      "card": "assets/projects/meteor/card.jpg",
+      "hero": "assets/projects/meteor/hero.jpg",
+      "theme": {
+        "bg": "#060a16",
+        "fg": "#eef4ff",
+        "muted": "rgba(238, 244, 255, 0.62)",
+        "accent": "#22c3ee"
+      },
+      "summary": "Meteor Madness is an interactive platform that uses real NASA asteroid data to explore potential asteroid impacts and their effects on Earth.",
+      "bullets": [
+        "Uses NASA data to analyze asteroid size, speed, trajectory, and potential impact risk.",
+        "Built an interactive 3D simulation to visualize asteroid impacts and their effects on different locations.",
+        "Developed for the NASA Space Apps Challenge using real-world space and planetary data."
+      ],
+      "closing": "Built to turn complex asteroid data into something anyone can explore and understand.",
+      "links": [
+        {
+          "label": "Open the simulator",
+          "url": "https://nasahackathon.up.railway.app/simulation",
+          "primary": true
+        },
+        {
+          "label": "Visit the site",
+          "url": "https://nasahackathon.up.railway.app/"
+        }
+      ],
+      "oneliner": "3D asteroid impact simulator powered by real NASA data."
+    }
+  ]
+}

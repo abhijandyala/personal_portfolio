@@ -1,0 +1,83 @@
+/* Full-screen pages opened from a hub node (page.js): the circle reveal, scrolling, Back, fade-ins */
+
+.pg {
+  --pg-ease: cubic-bezier(0.65, 0, 0.35, 1);   /* easy ease in and out */
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  background: #fff;
+  color: #0a0a0a;
+  /* grows out of the hub node */
+  clip-path: circle(0px at var(--ox, 50%) var(--oy, 50%));
+  transition: clip-path 0.9s var(--pg-ease);
+}
+
+.pg[hidden] {
+  display: none;
+}
+
+.pg.is-open {
+  clip-path: circle(150vmax at var(--ox, 50%) var(--oy, 50%));
+}
+
+.pg-scroll {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.pg-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s var(--ease), transform 0.9s var(--ease);
+}
+
+.pg-in.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+.pg-back {
+  position: absolute;
+  left: 24px;
+  top: 18px;
+  z-index: 2;
+  padding: 9px 14px;
+  border: 1px solid rgba(10, 10, 10, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #0a0a0a;
+  font: 500 12px/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.35s var(--ease), transform 0.45s var(--ease);
+}
+
+.pg-back:hover,
+.pg-back:focus-visible {
+  border-color: #0a0a0a;
+  transform: translateX(-2px);
+}
+
+.pg-back:focus-visible {
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .pg-back {
+    left: 16px;
+    top: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pg,
+  .pg-in {
+    transition-duration: 0.01s;
+    transition-delay: 0s;
+  }
+}

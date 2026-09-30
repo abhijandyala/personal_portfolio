@@ -1,0 +1,240 @@
+/*
+ * Hub node previews: a few cards stacked faintly behind a hub node (SF Trip clips, project screenshots).
+ * Hovering the node fans them out with "Click to see"; the card under the pointer lifts a little.
+ * Cards are <canvas> (drawn from hidden preview videos by intro.js) or <img>.
+ */
+
+.intro-node--stack {
+  z-index: 1;
+}
+
+.intro-node--stack::before {
+  position: relative;
+  z-index: 2;
+  background: radial-gradient(circle, #0a0a0a 0 5px, rgba(10, 10, 10, 0.14) 5.5px 12px, transparent 12.5px);
+}
+
+.intro-node--stack > span:last-child {
+  position: relative;
+  z-index: 2;
+  padding: 3px 0;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+}
+
+/* A real box around the node (media inside a zero-size moving layer doesn't get painted). The node
+   sits at (170px, 160px) inside it; the box covers the fanned-out cards so the hover doesn't drop
+   while the pointer moves between them. */
+.node-stack {
+  --sw: 48px;                  /* card size */
+  --sh: 86px;
+  --rot: 1;                    /* how much the cards tilt */
+  --stack-ease: var(--ease);
+  position: absolute;
+  left: -170px;
+  top: calc(50% - 160px);
+  width: 340px;
+  height: 200px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.node-stack--wide {
+  --sw: 84px;
+  --sh: 53px;
+  --rot: 0.6;
+}
+
+.intro-node--stack:hover .node-stack {
+  pointer-events: auto;
+}
+
+.intro-node--stack.is-left .node-stack {
+  left: calc(100% - 170px);
+}
+
+/* hidden sources; frames are drawn onto the canvases */
+.node-stack video {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.node-stack-card {
+  position: absolute;
+  left: calc(170px - var(--sw) / 2);
+  top: calc(160px - var(--sh) / 2);
+  width: var(--sw);
+  height: var(--sh);
+  object-fit: cover;
+  border-radius: 6px;
+  background: #ddd;
+  opacity: 0.32;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  pointer-events: auto;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  translate: 0 0;
+  transition:
+    transform 0.9s var(--stack-ease),
+    translate 0.55s var(--stack-ease),
+    opacity 0.7s var(--stack-ease),
+    box-shadow 0.55s var(--stack-ease);
+}
+
+/* resting: a loose pile just above the node */
+.node-stack-card:nth-of-type(1) {
+  transform: translate(calc(var(--sw) * -0.58), calc(var(--sh) * -0.5 - 1px)) rotate(calc(-11deg * var(--rot)));
+}
+.node-stack-card:nth-of-type(2) {
+  transform: translate(0, calc(var(--sh) * -0.5 - 11px)) rotate(calc(3deg * var(--rot)));
+  transition-delay: 0.04s, 0s, 0.04s, 0s;
+}
+.node-stack-card:nth-of-type(3) {
+  transform: translate(calc(var(--sw) * 0.54), calc(var(--sh) * -0.5 + 1px)) rotate(calc(13deg * var(--rot)));
+  transition-delay: 0.08s, 0s, 0.08s, 0s;
+}
+
+/* hovered: fanned out */
+.intro-node--stack:hover .node-stack-card,
+.intro-node--stack:focus-visible .node-stack-card {
+  opacity: 0.95;
+}
+
+.intro-node--stack:hover .node-stack-card:nth-of-type(1),
+.intro-node--stack:focus-visible .node-stack-card:nth-of-type(1) {
+  transform: translate(calc(var(--sw) * -1.33), calc(var(--sh) * -0.5 - 31px)) rotate(calc(-14deg * var(--rot))) scale(1.12);
+}
+.intro-node--stack:hover .node-stack-card:nth-of-type(2),
+.intro-node--stack:focus-visible .node-stack-card:nth-of-type(2) {
+  transform: translate(0, calc(var(--sh) * -0.5 - 55px)) rotate(calc(2deg * var(--rot))) scale(1.18);
+}
+.intro-node--stack:hover .node-stack-card:nth-of-type(3),
+.intro-node--stack:focus-visible .node-stack-card:nth-of-type(3) {
+  transform: translate(calc(var(--sw) * 1.29), calc(var(--sh) * -0.5 - 27px)) rotate(calc(15deg * var(--rot))) scale(1.12);
+}
+
+/* the card under the pointer lifts a little (translate stacks on top of the fan-out transform) */
+.intro-node--stack .node-stack-card:hover {
+  translate: 0 -10px;
+  opacity: 1;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.22);
+  transition-delay: 0s;
+}
+
+.node-hint {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  font-style: normal;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(10, 10, 10, 0.55);
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.6s var(--ease), transform 0.7s var(--ease);
+}
+
+.intro-node--stack:hover .node-hint,
+.intro-node--stack:focus-visible .node-hint {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .node-stack-card,
+  .node-hint {
+    transition-duration: 0.01s;
+  }
+}
+
+/* one card only (Building: the ValiqAI logo): faint at rest like the other stacks, lifts on hover */
+.node-stack--single {
+  --sw: 156px;
+  --sh: 53px;
+}
+
+.node-stack--single .node-stack-card:nth-of-type(1) {
+  border-radius: 8px;
+  transform: translate(0, calc(var(--sh) * -0.5 - 8px)) scale(0.92);
+}
+
+.intro-node--stack:hover .node-stack--single .node-stack-card:nth-of-type(1),
+.intro-node--stack:focus-visible .node-stack--single .node-stack-card:nth-of-type(1) {
+  transform: translate(0, calc(var(--sh) * -0.5 - 30px)) scale(1.12);
+}
+
+/* Contact: social tags that pop out of the node in an arc on hover (click one to open it) */
+.node-socials {
+  --arc-x: 190px;              /* half-width and height of the arc */
+  --arc-y: 108px;
+  position: absolute;
+  left: -220px;
+  top: calc(50% - 160px);
+  width: 440px;
+  height: 200px;
+  z-index: 0;
+  pointer-events: none;        /* while hovered, the box keeps the hover alive between the node and a tag */
+}
+
+.intro-node--stack:hover .node-socials {
+  pointer-events: auto;
+}
+
+.intro-node--stack.is-left .node-socials {
+  left: calc(100% - 220px);
+}
+
+.node-social {
+  /* spread over the upper half: -165deg ... -15deg */
+  --a: calc(-165deg + var(--i) * 30deg);
+  position: absolute;
+  left: 220px;
+  top: 160px;
+  padding: 7px 11px 6px;
+  border-radius: 999px;
+  background: #0a0a0a;
+  color: #fff;
+  font: 500 11px/1 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: none;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.3);
+  /* going back in: quick, last tag first */
+  transition:
+    transform 0.35s var(--ease) calc((5 - var(--i)) * 0.02s),
+    opacity 0.25s var(--ease) calc((5 - var(--i)) * 0.02s),
+    background 0.3s var(--ease);
+}
+
+.intro-node--stack:hover .node-social,
+.intro-node--stack:focus-visible .node-social {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(calc(-50% + cos(var(--a)) * var(--arc-x)), calc(-50% + sin(var(--a)) * var(--arc-y))) scale(1);
+  /* popping out: a little overshoot, staggered around the arc */
+  transition:
+    transform 0.6s cubic-bezier(0.34, 1.45, 0.64, 1) calc(var(--i) * 0.045s),
+    opacity 0.3s var(--ease) calc(var(--i) * 0.045s),
+    background 0.3s var(--ease);
+}
+
+.intro-node--stack .node-social:hover {
+  background: #fff;
+  color: #0a0a0a;
+  box-shadow: inset 0 0 0 1px #0a0a0a, 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+@media (hover: none) {
+  .node-socials {
+    display: none;             /* touch: tapping Contact opens the page */
+  }
+}

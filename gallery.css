@@ -1,0 +1,336 @@
+/* Node gallery (gallery.js): the white node canvas behind SF Trip, Projects, ... */
+
+.ng {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  overflow: hidden;
+  overflow: clip;               /* hidden still allows programmatic scrolling (e.g. focusing an embed) */
+  color: #0a0a0a;
+}
+
+.ng[hidden] {
+  display: none;
+}
+
+.ng-stage {
+  position: absolute;
+  inset: 0;
+}
+
+/* the card copy that grows to fill the screen when a card is opened */
+.ng-zoom {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  transform-origin: 0 0;
+  will-change: transform;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.ng-zoom.is-moving {
+  transition: transform 0.95s cubic-bezier(0.65, 0, 0.35, 1);    /* easy ease in and out */
+}
+
+.ng-zoom .ng-card-media {
+  width: 100%;
+  height: 100%;
+  transform: none !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.ng-zoom .ng-card-hint {
+  display: none;
+}
+
+/* the original stays in place (hidden) so the copy can fly back to it */
+.ng-card.is-target {
+  visibility: hidden;
+}
+
+.ng-links {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  will-change: opacity;          /* own GPU layer: fading it never repaints the stage */
+}
+
+.ng-links line {
+  stroke: #0a0a0a;
+  stroke-width: 1;
+}
+
+.ng-links circle {
+  fill: #0a0a0a;
+}
+
+/* sequence galleries: Day 1 -> Day 2 -> ... arrows */
+.ng-links .ng-seq {
+  stroke-width: 1.6;
+  stroke-opacity: 0.85;
+}
+
+.ng-links marker path {
+  fill: #0a0a0a;
+}
+
+/* Start / End tags on the first and last card of a sequence */
+.ng-tag {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 8px);
+  z-index: 1;
+  padding: 5px 9px 4px;
+  border-radius: 999px;
+  background: #0a0a0a;
+  color: #fff;
+  font: 600 10px/1 var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: opacity 0.45s var(--ease);
+}
+
+.ng-stage.is-focused .ng-card.is-target .ng-tag {
+  opacity: 0;
+}
+
+.ng-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+
+.ng-card-media {
+  position: relative;
+  display: block;
+  width: var(--cw);
+  height: var(--ch);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #e9e9e9;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.55s var(--ease), box-shadow 0.55s var(--ease);
+}
+
+.ng-card canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ng-card-hint {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0a0a0a;
+  font-size: 13px;
+  transform: translate(-50%, -50%) scale(0.7);
+  opacity: 0;
+  transition: opacity 0.45s var(--ease), transform 0.55s var(--ease);
+}
+
+/* caption under a card: name, optional one-liner, optional date - on a soft white backing so the
+   network lines behind it never cut through the text */
+.ng-card-title {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
+  display: block;
+  width: max-content;
+  max-width: var(--cw);
+  padding: 2px 0;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.9);
+  border-radius: 2px;
+  color: #0a0a0a;
+  transition: opacity 0.45s var(--ease);
+}
+
+.ng-card-title strong {
+  display: block;
+  font: 600 11.5px/1.3 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ng-card-desc {
+  display: block;
+  margin-top: 5px;
+  font: 400 13px/1.4 'DM Sans', system-ui, sans-serif;
+  letter-spacing: 0;
+  color: #262626;
+}
+
+.ng-card-title small {
+  display: block;
+  margin-top: 5px;
+  font: 500 10.5px/1.2 var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5c5c5c;
+}
+
+.ng-card:hover .ng-card-media,
+.ng-card:focus-visible .ng-card-media {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.ng-card:hover .ng-card-hint,
+.ng-card:focus-visible .ng-card-hint {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.ng-card:focus-visible {
+  outline: none;
+}
+
+/* dragging: the held card rides on top, a little bigger; the others don't do hover lifts meanwhile */
+.ng-card.is-dragging {
+  z-index: 2;
+  cursor: grabbing;
+}
+
+.ng-card.is-dragging .ng-card-media {
+  transform: scale(1.05);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.ng-stage.is-dragging .ng-card:not(.is-dragging) .ng-card-media {
+  transform: none;
+}
+
+.ng-card.is-dragging .ng-card-hint,
+.ng-stage.is-dragging .ng-card-hint {
+  opacity: 0;
+}
+
+.ng-card:focus-visible .ng-card-media {
+  outline: 2px solid #0a0a0a;
+  outline-offset: 3px;
+}
+
+/* while zooming in, everything but the target steps back */
+.ng-stage.is-focused .ng-card:not(.is-target),
+.ng-stage.is-focused .ng-links {
+  opacity: 0.12 !important;
+  transition: opacity 0.45s var(--ease);
+}
+
+.ng-stage.is-focused .ng-card.is-target .ng-card-title,
+.ng-stage.is-focused .ng-card.is-target .ng-card-hint {
+  opacity: 0;
+}
+
+.ng-head {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 24px;
+  font: 500 12px/1 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.5s var(--ease), transform 0.6s var(--ease);
+}
+
+/* shown while the gallery is open (gallery.js toggles .is-shown on open / close) */
+.ng.is-shown .ng-head {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.25s;
+}
+
+.ng-back {
+  pointer-events: auto;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: #0a0a0a;
+  background: #fff;
+  border: 1px solid rgba(10, 10, 10, 0.2);
+  border-radius: 999px;
+  padding: 9px 14px;
+  cursor: pointer;
+  transition: border-color 0.35s var(--ease), transform 0.45s var(--ease);
+}
+
+.ng-back:hover,
+.ng-back:focus-visible {
+  border-color: #0a0a0a;
+  transform: translateX(-2px);
+}
+
+.ng-back {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.ng-heading {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0.6;
+}
+
+.ng.is-shown.is-focused .ng-head {
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+.ng:not(.is-shown) .ng-back,
+.ng.is-focused .ng-back {
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .ng-head {
+    padding: 14px 16px;
+    gap: 12px;
+    font-size: 11px;
+  }
+  .ng-card-title strong {
+    font-size: 10px;
+  }
+  .ng-card-desc {
+    font-size: 12px;
+  }
+  .ng-card-title small {
+    font-size: 9.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ng-zoom.is-moving {
+    transition-duration: 0.01s;
+  }
+}

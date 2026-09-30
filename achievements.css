@@ -1,0 +1,183 @@
+/* Achievements: award cards in the node gallery; the award page reuses the project page (projects.css) */
+
+/* the placing, on a small chip over the photo */
+.ac-badge {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  padding: 6px 9px 5px;
+  border-radius: 4px;
+  background: #0a0a0a;
+  color: #fff;
+  font: 400 15px/1 Anton, var(--font-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* no photo: the placing is the picture */
+.ac-tile {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 14px 16px;
+  background:
+    radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--t-accent) 28%, transparent), transparent 60%),
+    var(--t-bg);
+  color: var(--t-fg);
+  overflow: hidden;
+}
+
+.ac-tile b {
+  font: 400 clamp(34px, 3.4vw, 54px)/0.9 Anton, var(--font-mono);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--t-fg);
+}
+
+.ac-tile i {
+  font: 500 10px/1.3 var(--font-mono);
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--t-accent);
+}
+
+.ac-tile--big {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  padding: clamp(22px, 3vw, 36px);
+  gap: 14px;
+}
+
+.ac-tile--big b {
+  font-size: clamp(64px, 9vw, 132px);
+}
+
+.ac-tile--big i {
+  font-size: 12px;
+}
+
+/* ---------- award page ---------- */
+
+.ac-event {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--pj-muted);
+}
+
+.ac-grid--solo {
+  grid-template-columns: minmax(0, 760px);
+}
+
+.pj-hero figcaption {
+  padding: 10px 14px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pj-muted);
+  background: color-mix(in srgb, var(--pj-fg) 6%, var(--pj-bg));
+}
+
+.ac-awards {
+  margin: 0 0 26px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.ac-awards li {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--pj-fg) 5%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--pj-fg) 12%, transparent);
+}
+
+.ac-awards b {
+  font: 400 22px/1 Anton, var(--font-mono);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--pj-accent);
+}
+
+.ac-awards span {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* a small portrait image (e.g. a flyer): don't blow it up to the full column */
+.ac-hero--narrow {
+  max-width: 420px;
+  justify-self: center;
+}
+
+/* extra photos under the summary */
+.ac-photos {
+  display: grid;
+  gap: 18px;
+  margin-top: clamp(40px, 7vh, 72px);
+}
+
+.ac-photos figure {
+  max-width: 980px;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px var(--pj-shadow, rgba(0, 0, 0, 0.5)), 0 0 0 1px color-mix(in srgb, var(--pj-fg) 12%, transparent);
+}
+
+.ac-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ac-photos figcaption {
+  padding: 12px 16px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pj-muted);
+  background: color-mix(in srgb, var(--pj-fg) 6%, var(--pj-bg));
+}
+
+/* self-hosted video (plays in place, no click-to-load) */
+.pj-video-frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+/* phones: the caption is just the name and event + date (matches the smaller caption space in achievements.js) */
+@media (max-width: 599px) {
+  .ac .ng-card-desc {
+    display: none;
+  }
+  .ac-badge {
+    left: 7px;
+    top: 7px;
+    padding: 4px 6px 3px;
+    font-size: 12px;
+  }
+  .ng-card .ac-tile {
+    padding: 10px 11px;
+    gap: 5px;
+  }
+  .ng-card .ac-tile b {
+    font-size: 30px;
+  }
+  .ng-card .ac-tile i {
+    font-size: 8.5px;
+  }
+}

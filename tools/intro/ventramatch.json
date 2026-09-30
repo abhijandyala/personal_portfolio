@@ -1,0 +1,124 @@
+{
+ "_comment": "VentraMatch Journey: 7 days to build a company and apply to YC. Previews keep the reels' own captions (they're on screen almost the whole time).",
+ "source": "source-videos/ventramatch",
+ "out": "assets/ventramatch",
+ "hub_stack": [
+  "01",
+  "04",
+  "07"
+ ],
+ "clips": [
+  {
+   "id": "01",
+   "title": "Day 1 · Can we make it to YC in a week?",
+   "instagram": "https://www.instagram.com/reel/DXs3gN5jdNK/",
+   "date": "Apr 29, 2026",
+   "preview": {
+    "start": 0.5,
+    "dur": 4.0,
+    "crop": [
+     0,
+     0,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "id": "02",
+   "title": "Day 2 · Picking the idea",
+   "instagram": "https://www.instagram.com/reel/DXu-EY7EdbR/",
+   "date": "Apr 29, 2026",
+   "preview": {
+    "start": 6.5,
+    "dur": 4.0,
+    "crop": [
+     0,
+     0,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "id": "03",
+   "title": "Day 3 · Meet the team",
+   "instagram": "https://www.instagram.com/reel/DXz-5UpxMpt/",
+   "date": "May 1, 2026",
+   "preview": {
+    "start": 6.5,
+    "dur": 4.0,
+    "crop": [
+     0,
+     0,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "id": "04",
+   "title": "Day 4 · Finishing the dashboard",
+   "instagram": "https://www.instagram.com/reel/DX2KtohRA4B/",
+   "date": "May 2, 2026",
+   "preview": {
+    "start": 21.0,
+    "dur": 4.0,
+    "crop": [
+     0,
+     0,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "id": "05",
+   "title": "Day 5 · The matching algorithm",
+   "instagram": "https://www.instagram.com/reel/DX3UTgBtqih/",
+   "date": "May 3, 2026",
+   "preview": {
+    "start": 7.0,
+    "dur": 4.0,
+    "crop": [
+     0,
+     0,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "id": "06",
+   "title": "Day 6 · What VentraMatch is",
+   "instagram": "https://www.instagram.com/reel/DX7b1EExhh-/",
+   "date": "May 4, 2026",
+   "preview": {
+    "start": 12.0,
+    "dur": 4.0,
+    "crop": [
+     0,
+     0,
+     1,
+     1
+    ]
+   }
+  },
+  {
+   "id": "07",
+   "title": "Day 7 · Submitted to YC",
+   "instagram": "https://www.instagram.com/reel/DYBKu6TRkUr/",
+   "date": "May 7, 2026",
+   "preview": {
+    "start": 3.0,
+    "dur": 4.0,
+    "crop": [
+     0,
+     0,
+     1,
+     1
+    ]
+   }
+  }
+ ]
+}

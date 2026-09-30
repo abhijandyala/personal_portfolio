@@ -1,0 +1,327 @@
+/* About: in the site's own look (white, black, Anton + mono); the page mechanics are in page.css */
+
+.ab {
+  --ab-muted: #5c5c5c;
+  --ab-line: rgba(10, 10, 10, 0.12);
+  --ab-sans: 'DM Sans', system-ui, sans-serif;
+}
+
+.ab-page {
+  max-width: 1760px;
+  margin: 0 auto;
+  padding: clamp(84px, 12vh, 128px) clamp(20px, 5vw, 96px) 96px;
+}
+
+.ab-label,
+.ab-sub {
+  margin: 0 0 18px;
+  font: 500 12px/1.4 var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ab-muted);
+}
+
+.ab-sub {
+  margin: 26px 0 12px;
+}
+
+.ab h3 {
+  margin: 0 0 8px;
+  font: 600 clamp(19px, 1.5vw, 22px)/1.3 var(--ab-sans);
+  letter-spacing: -0.01em;
+}
+
+.ab h3 a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+
+/* ---------- hero ---------- */
+
+.ab-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(36px, 6vw, 110px);
+  align-items: center;
+}
+
+.ab-portrait {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #1e1e1e;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.ab-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.ab-name {
+  margin: 0 0 18px;
+  font: 400 clamp(56px, 8vw, 150px)/0.9 Anton, var(--font-mono);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.ab-meta {
+  margin: 0 0 28px;
+  font: 500 13px/1.5 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.ab-lede {
+  max-width: 40ch;
+  margin: 0 0 30px;
+  font: 400 clamp(19px, 1.7vw, 25px)/1.5 var(--ab-sans);
+  color: #1a1a1a;
+}
+
+.ab-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ab-links a,
+.ab-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px rgba(10, 10, 10, 0.22);
+  color: #0a0a0a;
+  font: 500 12px/1 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: box-shadow 0.4s var(--ease), background 0.4s var(--ease), color 0.4s var(--ease), transform 0.5s var(--ease);
+}
+
+.ab-links a:hover,
+.ab-links a:focus-visible {
+  box-shadow: inset 0 0 0 1px #0a0a0a;
+  transform: translateY(-2px);
+}
+
+.ab-links a:first-child,
+.ab-cta {
+  background: #0a0a0a;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* ---------- numbers ---------- */
+
+.ab-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: clamp(64px, 11vh, 120px) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ab-line);
+  border-bottom: 1px solid var(--ab-line);
+}
+
+.ab-stats li {
+  padding: 28px 24px 28px 0;
+}
+
+.ab-stats li + li {
+  padding-left: 24px;
+  border-left: 1px solid var(--ab-line);
+}
+
+.ab-stats b {
+  display: block;
+  margin-bottom: 8px;
+  font: 400 clamp(44px, 5vw, 76px)/1 Anton, var(--font-mono);
+}
+
+.ab-stats span {
+  font: 400 15px/1.45 var(--ab-sans);
+  color: var(--ab-muted);
+}
+
+/* ---------- sections ---------- */
+
+.ab-block {
+  margin-top: clamp(72px, 12vh, 130px);
+}
+
+.ab-built {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ab-built li {
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px var(--ab-line);
+}
+
+.ab-built strong {
+  display: block;
+  margin-bottom: 8px;
+  font: 400 26px/1 Anton, var(--font-mono);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.ab-built span,
+.ab-note,
+.ab-timeline p:not(.ab-when),
+.ab-school p:not(.ab-when) {
+  font: 400 16px/1.6 var(--ab-sans);
+  color: #3a3a3a;
+}
+
+.ab-note {
+  margin: 20px 0 0;
+}
+
+.ab-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 110px);
+}
+
+.ab-timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ab-timeline li {
+  position: relative;
+  padding: 0 0 30px 28px;
+  border-left: 1px solid var(--ab-line);
+}
+
+.ab-timeline li:last-child {
+  padding-bottom: 0;
+}
+
+/* a node on the line, like the hub */
+.ab-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #0a0a0a;
+}
+
+.ab-when {
+  margin: 0 0 6px;
+  font: 500 11px/1.4 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ab-muted);
+}
+
+.ab-timeline p:not(.ab-when),
+.ab-school p:not(.ab-when) {
+  margin: 0;
+}
+
+.ab-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ab-chips li {
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 1px var(--ab-line);
+  font: 500 12px/1 var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+.ab-chips--big li {
+  padding: 11px 16px;
+  font-size: 13px;
+}
+
+.ab-chips li.is-top {
+  background: #0a0a0a;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* ---------- closing ---------- */
+
+.ab-end {
+  margin-top: clamp(80px, 13vh, 140px);
+  padding: clamp(32px, 5vw, 64px);
+  border-radius: 18px;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.ab-end .ab-label {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.ab-end h3 {
+  max-width: 22ch;
+  margin-bottom: 14px;
+  font: 400 clamp(32px, 4vw, 60px)/1 Anton, var(--font-mono);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.ab-end p:not(.ab-label) {
+  margin: 0 0 26px;
+  font: 400 17px/1.6 var(--ab-sans);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.ab-cta {
+  background: #fff;
+  color: #0a0a0a;
+}
+
+.ab-cta:hover,
+.ab-cta:focus-visible {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1000px) {
+  .ab-hero,
+  .ab-cols {
+    grid-template-columns: 1fr;
+  }
+  .ab-portrait {
+    max-width: 420px;
+  }
+  .ab-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ab-stats li:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .ab-stats li:nth-child(n + 3) {
+    border-top: 1px solid var(--ab-line);
+  }
+  .ab-built {
+    grid-template-columns: 1fr;
+  }
+}

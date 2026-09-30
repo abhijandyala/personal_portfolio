@@ -1,0 +1,223 @@
+/* Intro: montage -> zoom out to name with video in the letters -> white node field (site nav) */
+
+:root {
+  --ease: cubic-bezier(0.33, 0, 0.67, 1);      /* After Effects "Easy Ease": slow out of every point, slow into the next */
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  -webkit-font-smoothing: antialiased;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.intro {
+  --intro-ink: #0a0a0a;
+  --intro-paper: #ffffff;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #000;
+  cursor: auto;
+  overflow: hidden;
+  overflow: clip;
+  transition: opacity 0.6s var(--ease, ease), visibility 0.6s;
+}
+
+/* once the hub is up the backdrop is paper white (the gallery and hub fades sit on it) */
+.intro.is-hub {
+  background: #fff;
+}
+
+.intro.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro > canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* source videos are drawn onto the canvas, never shown directly */
+.intro > video {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(240px, 50vw);
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s var(--ease);
+}
+
+.intro-loader span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #fff;
+  transition: width 0.2s linear;
+}
+
+.intro.is-playing .intro-loader {
+  opacity: 0;
+}
+
+.intro-skip {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+  font: 500 12px/1 var(--font-mono, monospace);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: color 0.35s var(--ease), border-color 0.35s var(--ease), opacity 0.5s var(--ease);
+}
+
+.intro-skip:hover,
+.intro-skip:focus-visible {
+  color: #fff;
+  border-color: #fff;
+}
+
+.intro.is-hub .intro-skip {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Nav nodes: real links positioned over their canvas nodes */
+.intro-nav {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.intro-node {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px 8px 0;
+  font: 500 13px/1 var(--font-mono, monospace);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--intro-ink);
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s var(--ease);
+}
+
+.intro.is-hub .intro-node {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* the dot itself is drawn on the canvas; this is its hit area */
+.intro-node::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  margin-left: -14px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.intro-node.is-left {
+  flex-direction: row-reverse;
+  padding: 8px 0 8px 10px;
+}
+
+.intro-node.is-left::before {
+  margin-left: 0;
+  margin-right: -14px;
+}
+
+.intro-node.is-left:hover > span:last-child,
+.intro-node.is-left:focus-visible > span:last-child {
+  transform: translateX(-4px);
+}
+
+.intro-node > span:last-child {
+  transition: transform 0.45s var(--ease);
+}
+
+.intro-node:hover > span:last-child,
+.intro-node:focus-visible > span:last-child {
+  transform: translateX(4px);
+}
+
+.intro-node:focus-visible {
+  outline: 1px solid var(--intro-ink);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.intro-hub-title {
+  position: absolute;
+  left: 24px;
+  top: 22px;
+  font: 400 13px/1 var(--font-mono, monospace);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--intro-ink);
+  opacity: 0;
+  transition: opacity 0.7s var(--ease) 0.3s;
+}
+
+.intro.is-hub .intro-hub-title {
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .intro-skip {
+    right: 16px;
+    bottom: 16px;
+  }
+  .intro-hub-title {
+    left: 16px;
+  }
+  .intro-node {
+    font-size: 12px;
+  }
+}

@@ -3,708 +3,288 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhi Jandyala — Building with AI</title>
-  <meta name="description" content="Abhi Jandyala — 16-year-old AI & full stack developer. Building ValiqAI. 3 products live, 3 first-place hackathon awards in 2026.">
+  <title>Abhi Jandyala</title>
+  <meta name="description" content="Abhi Jandyala — 16-year-old AI & full stack developer. Building ValiqAI. 3 first-place hackathon awards in 2026.">
+  <meta name="theme-color" content="#000000">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="intro.css">
+  <link rel="stylesheet" href="node-stack.css">
+  <link rel="stylesheet" href="gallery.css">
+  <link rel="stylesheet" href="sftrip.css">
+  <link rel="stylesheet" href="projects.css">
+  <link rel="stylesheet" href="achievements.css">
+  <link rel="stylesheet" href="page.css">
+  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-  <div class="cursor"></div>
-  <div class="marquee-container">
-    <div class="marquee">
-      <span>ABHI JANDYALA</span>
-      <span class="marquee-dot"></span>
-      <span>BUILDING VALIQAI</span>
-      <span class="marquee-dot"></span>
-      <span>3&times; FIRST PLACE &mdash; 2026</span>
-      <span class="marquee-dot"></span>
-      <span>NORTH CAROLINA, USA</span>
-      <span class="marquee-dot"></span>
-      <span>ABHI JANDYALA</span>
-      <span class="marquee-dot"></span>
-      <span>BUILDING VALIQAI</span>
-      <span class="marquee-dot"></span>
-      <span>3&times; FIRST PLACE &mdash; 2026</span>
-      <span class="marquee-dot"></span>
-      <span>NORTH CAROLINA, USA</span>
-      <span class="marquee-dot"></span>
-    </div>
-  </div>
+  <main class="intro" id="intro">
+    <h1 class="visually-hidden">Abhi Jandyala</h1>
+    <canvas aria-hidden="true"></canvas>
+    <video data-intro="montage" muted playsinline preload="auto" aria-hidden="true"></video>
+    <video data-intro="letters" muted playsinline loop preload="auto" aria-hidden="true"></video>
+    <div class="intro-loader" aria-hidden="true"><span></span></div>
+    <span class="intro-hub-title" aria-hidden="true">Abhi Jandyala</span>
+    <nav class="intro-nav" aria-label="Site sections">
+      <a class="intro-node intro-node--stack" href="https://www.valiqai.com/" target="_blank" rel="noopener" aria-label="Building: ValiqAI (opens valiqai.com)">
+        <span class="node-stack node-stack--single" aria-hidden="true">
+          <img class="node-stack-card" data-src="assets/building/logo.jpg" alt="" draggable="false">
+        </span>
+        <span>Building<em class="node-hint" aria-hidden="true">valiqai.com &nearr;</em></span>
+      </a>
+      <a class="intro-node intro-node--stack" href="#projects" data-gallery="projects" aria-label="Projects: see what I've built">
+        <span class="node-stack node-stack--wide" aria-hidden="true">
+          <img class="node-stack-card" data-src="assets/projects/speaknow/card.jpg" alt="" draggable="false">
+          <img class="node-stack-card" data-src="assets/projects/aegis/card.jpg" alt="" draggable="false">
+          <img class="node-stack-card" data-src="assets/projects/ghostthread/card.jpg" alt="" draggable="false">
+        </span>
+        <span>Projects<em class="node-hint" aria-hidden="true">Click to see</em></span>
+      </a>
+      <a class="intro-node intro-node--stack" href="#achievements" data-gallery="achievements" aria-label="Achievements: see what I've won">
+        <span class="node-stack node-stack--wide" aria-hidden="true">
+          <img class="node-stack-card" data-src="assets/achievements/usaii-card.jpg" alt="" draggable="false">
+          <img class="node-stack-card" data-src="assets/achievements/agents-card.jpg" alt="" draggable="false">
+          <img class="node-stack-card" data-src="assets/achievements/tsa-card.jpg" alt="" draggable="false">
+        </span>
+        <span>Achievements<em class="node-hint" aria-hidden="true">Click to see</em></span>
+      </a>
+      <a class="intro-node intro-node--stack" href="#about" data-gallery="about" aria-label="About: who I am">
+        <span class="node-stack node-stack--wide" aria-hidden="true">
+          <img class="node-stack-card" data-src="assets/achievements/agents-card.jpg" alt="" draggable="false">
+          <img class="node-stack-card" data-src="assets/about/stack-portrait.jpg" alt="" draggable="false">
+          <img class="node-stack-card" data-src="assets/about/stack-award.jpg" alt="" draggable="false">
+        </span>
+        <span>About<em class="node-hint" aria-hidden="true">Click to see</em></span>
+      </a>
+      <a class="intro-node intro-node--stack" href="#contact" data-gallery="contact" aria-label="Contact: get in touch">
+        <span class="node-socials" aria-hidden="true">
+          <span class="node-social" style="--i:0" data-href="mailto:abhijandyala@gmail.com">Gmail</span>
+          <span class="node-social" style="--i:1" data-href="mailto:abhi@valiqai.com">ValiqAI</span>
+          <span class="node-social" style="--i:2" data-href="https://www.linkedin.com/in/abhi-jandyala-7875a12a8/">LinkedIn</span>
+          <span class="node-social" style="--i:3" data-href="https://github.com/abhijandyala">GitHub</span>
+          <span class="node-social" style="--i:4" data-href="https://www.instagram.com/abhi_jandyala">Instagram</span>
+          <span class="node-social" style="--i:5" data-href="https://www.instagram.com/abhij_journey">@abhij_journey</span>
+        </span>
+        <span>Contact</span>
+      </a>
+      <a class="intro-node intro-node--stack" href="#sf-trip" data-gallery="sftrip" aria-label="SF Trip: watch the videos">
+        <span class="node-stack" aria-hidden="true">
+          <canvas class="node-stack-card"></canvas><video data-src="assets/sftrip/03-preview.mp4" muted loop playsinline preload="none"></video>
+          <canvas class="node-stack-card"></canvas><video data-src="assets/sftrip/08-preview.mp4" muted loop playsinline preload="none"></video>
+          <canvas class="node-stack-card"></canvas><video data-src="assets/sftrip/09-preview.mp4" muted loop playsinline preload="none"></video>
+        </span>
+        <span>SF Trip<em class="node-hint" aria-hidden="true">Click to see</em></span>
+      </a>
+      <a class="intro-node intro-node--stack" href="#ventramatch" data-gallery="ventramatch" aria-label="VentraMatch Journey: 7 days to build a company and apply to YC">
+        <span class="node-stack" aria-hidden="true">
+          <canvas class="node-stack-card"></canvas><video data-src="assets/ventramatch/01-preview.mp4" muted loop playsinline preload="none"></video>
+          <canvas class="node-stack-card"></canvas><video data-src="assets/ventramatch/04-preview.mp4" muted loop playsinline preload="none"></video>
+          <canvas class="node-stack-card"></canvas><video data-src="assets/ventramatch/07-preview.mp4" muted loop playsinline preload="none"></video>
+        </span>
+        <span>VentraMatch Journey<em class="node-hint" aria-hidden="true">Click to see</em></span>
+      </a>
+    </nav>
+    <button class="intro-skip" type="button">Skip</button>
 
-  <nav class="nav">
-    <div class="nav-left">
-      <span class="nav-time" id="time"></span>
-    </div>
-    <div class="nav-center">
-      <a href="#" class="nav-logo">AJ</a>
-    </div>
-    <div class="nav-right">
-      <a href="#flagship" class="nav-link">Building</a>
-      <a href="#work" class="nav-link">Work</a>
-      <a href="#wins" class="nav-link">Wins</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-tag">
-          <span class="tag-dot"></span>
-          <span>Currently building ValiqAI</span>
-        </div>
-
-        <h1 class="hero-title">
-          <span class="title-line">
-            <span class="word" style="--i:0">I'm</span>
-            <span class="word name-highlight" style="--i:1">Abhi</span>
-          </span>
-          <span class="title-line">
-            <span class="word italic" style="--i:2">building</span>
-            <span class="word" style="--i:3">with</span>
-          </span>
-          <span class="title-line">
-            <span class="word underline-anim" style="--i:4">AI</span>
-          </span>
-        </h1>
-
-        <p class="hero-desc">
-          16 years old. ML, LLMs, and full-stack SaaS.<br>
-          3 products live. 3 first-place hackathon awards in 2026.
-        </p>
-
-        <div class="hero-cta">
-          <a href="#flagship" class="btn-primary">
-            <span>See what I'm building</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M7 17L17 7M17 7H7M17 7V17"/>
-            </svg>
-          </a>
-          <a href="#contact" class="btn-secondary">Work with me</a>
-        </div>
-
-        <div class="hero-socials">
-          <a href="https://github.com/abhijandyala" target="_blank" rel="noopener" class="hero-social" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.34.95.11-.74.4-1.25.73-1.53-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.35.78 1.05.78 2.13v3.16c0 .3.21.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
-            <span>GitHub</span>
-          </a>
-          <a href="https://www.linkedin.com/in/abhiraag-jandyala-7875a12a8/" target="_blank" rel="noopener" class="hero-social" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
-            <span>LinkedIn</span>
-          </a>
-          <a href="https://x.com/abhijandyala" target="_blank" rel="noopener" class="hero-social" aria-label="X">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.59l5.24 6.93 6.07-6.93zm-1.29 19.5h2.04L6.49 3.24H4.3l13.31 17.41z"/></svg>
-            <span>X</span>
-          </a>
-          <a href="mailto:abhijandyala@gmail.com" class="hero-social" aria-label="Email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
-            <span>Email</span>
-          </a>
-        </div>
+    <section class="ng sf" id="sf-trip" aria-label="SF Trip videos" hidden>
+      <div class="ng-stage">
+        <svg class="ng-links" aria-hidden="true"></svg>
       </div>
-
-      <div class="hero-visual">
-        <div class="code-window">
-          <div class="code-header">
-            <div class="code-dots">
-              <span></span><span></span><span></span>
-            </div>
-            <span class="code-title">abhi.config.js</span>
-          </div>
-          <pre class="code-content"><code><span class="code-keyword">const</span> <span class="code-var">abhi</span> = {
-  <span class="code-prop">age</span>: <span class="code-bool">16</span>,
-  <span class="code-prop">building</span>: <span class="code-string">"ValiqAI"</span>,
-  <span class="code-prop">shipped</span>: [
-    <span class="code-string">"ChancifyAI"</span>,
-    <span class="code-string">"DebateXAI"</span>,
-  ],
-  <span class="code-prop">firstPlace2026</span>: <span class="code-bool">3</span>,
-  <span class="code-prop">status</span>: <span class="code-string">"shipping"</span>,
-};
-
-<span class="code-keyword">export default</span> abhi;</code></pre>
+      <header class="ng-head">
+        <button class="ng-back" type="button"><span aria-hidden="true">&larr;</span> Back</button>
+        <span class="ng-heading">SF Trip &middot; Summer 2026</span>
+      </header>
+      <div class="sf-player" hidden>
+        <video playsinline controls preload="none"></video>
+        <div class="sf-player-bar">
+          <span class="sf-player-title"></span>
+          <a class="sf-player-ig" target="_blank" rel="noopener">View on Instagram &nearr;</a>
         </div>
+        <button class="sf-close" type="button" aria-label="Close video">&times;</button>
       </div>
     </section>
 
-    <section class="proof-strip">
-      <div class="proof-item">
-        <span class="proof-num">03</span>
-        <span class="proof-label">Products live</span>
+    <section class="ng sf" id="ventramatch" aria-label="VentraMatch Journey videos" hidden>
+      <div class="ng-stage">
+        <svg class="ng-links" aria-hidden="true"></svg>
       </div>
-      <div class="proof-item">
-        <span class="proof-num">03</span>
-        <span class="proof-label">1st-place awards, 2026</span>
-      </div>
-      <div class="proof-item">
-        <span class="proof-num">05</span>
-        <span class="proof-label">Hackathons, 2026</span>
-      </div>
-      <div class="proof-item">
-        <span class="proof-num">16</span>
-        <span class="proof-label">Years old</span>
+      <header class="ng-head">
+        <button class="ng-back" type="button"><span aria-hidden="true">&larr;</span> Back</button>
+        <span class="ng-heading">VentraMatch Journey &middot; A company in 7 days, then apply to YC</span>
+      </header>
+      <div class="sf-player" hidden>
+        <video playsinline controls preload="none"></video>
+        <div class="sf-player-bar">
+          <span class="sf-player-title"></span>
+          <a class="sf-player-ig" target="_blank" rel="noopener">View on Instagram &nearr;</a>
+        </div>
+        <button class="sf-close" type="button" aria-label="Close video">&times;</button>
       </div>
     </section>
 
-    <section id="flagship" class="section flagship">
-      <div class="section-label">
-        <span class="label-num">01</span>
-        <span class="label-text">Currently Building</span>
+    <section class="ng pj" id="projects" aria-label="Projects" hidden>
+      <div class="ng-stage">
+        <svg class="ng-links" aria-hidden="true"></svg>
       </div>
-
-      <div class="flagship-header">
-        <div class="flagship-title-wrap">
-          <span class="flagship-badge">Flagship</span>
-          <h2 class="flagship-title">ValiqAI</h2>
-          <p class="flagship-tagline">The trust layer for AI-built software.</p>
-        </div>
-        <div class="flagship-links">
-          <a href="#project-1" class="project-link">Case study</a>
-          <a href="https://valiqai.com" target="_blank" rel="noopener" class="btn-primary">
-            <span>Visit valiqai.com</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M7 17L17 7M17 7H7M17 7V17"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="flagship-video">
-        <div class="code-header">
-          <div class="code-dots">
-            <span></span><span></span><span></span>
-          </div>
-          <span class="code-title">valiqai.com — live demo</span>
-        </div>
-        <video autoplay muted loop playsinline preload="metadata" poster="images/valiqai_video_poster.jpg">
-          <source src="images/valiqai_port_video.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="flagship-meta">
-        <p class="flagship-desc">
-          AI coding tools generate software fast, but a lot of that code only <em>looks</em>
-          finished. ValiqAI autonomously explores a product from a single URL, catches broken
-          logic, silent failures, and accessibility issues &mdash; no test scripts required.
-          Built for people shipping fast with AI who need validation without the setup.
-        </p>
-        <div class="project-tech">
-          <span>TypeScript</span>
-          <span>Next.js</span>
-          <span>Playwright</span>
-          <span>OpenAI</span>
-          <span>Node.js</span>
-        </div>
+      <header class="ng-head">
+        <button class="ng-back" type="button"><span aria-hidden="true">&larr;</span> Back</button>
+        <span class="ng-heading">Projects</span>
+      </header>
+      <div class="pj-detail" role="dialog" aria-modal="true" aria-labelledby="pj-title" hidden>
+        <div class="pj-scroll"><article class="pj-article"></article></div>
+        <button class="pj-close" type="button" aria-label="Close project">&times;</button>
       </div>
     </section>
 
-    <section id="work" class="section work">
-      <div class="section-label">
-        <span class="label-num">02</span>
-        <span class="label-text">Also Shipped</span>
+    <section class="ng pj ac" id="achievements" aria-label="Achievements" hidden>
+      <div class="ng-stage">
+        <svg class="ng-links" aria-hidden="true"></svg>
       </div>
+      <header class="ng-head">
+        <button class="ng-back" type="button"><span aria-hidden="true">&larr;</span> Back</button>
+        <span class="ng-heading">Achievements</span>
+      </header>
+      <div class="pj-detail" role="dialog" aria-modal="true" aria-labelledby="ac-title" hidden>
+        <div class="pj-scroll"><article class="pj-article"></article></div>
+        <button class="pj-close" type="button" aria-label="Close achievement">&times;</button>
+      </div>
+    </section>
 
-      <div class="work-grid">
-        <article class="work-card" data-project="2">
-          <div class="work-card-image">
-            <img src="images/chancifyai_port.png" alt="ChancifyAI Screenshot" loading="lazy">
-          </div>
-          <div class="work-card-body">
-            <div class="project-header">
-              <h3 class="project-title">ChancifyAI</h3>
-              <div class="project-links">
-                <a href="#project-2" class="project-link">Info</a>
-                <a href="https://chancifyai.com" target="_blank" rel="noopener" class="project-link">Live</a>
+    <section class="pg ab" id="about" data-page="about" role="dialog" aria-modal="true" aria-labelledby="ab-title" hidden>
+      <div class="pg-scroll">
+        <article class="ab-page">
+          <header class="ab-hero">
+            <figure class="ab-portrait pg-in"><img src="assets/about/portrait.jpg" alt="Abhi Jandyala" width="800" height="800"></figure>
+            <div class="ab-intro">
+              <p class="ab-label pg-in">About</p>
+              <h2 class="ab-name pg-in" id="ab-title">Abhi Jandyala</h2>
+              <p class="ab-meta pg-in">16 <span aria-hidden="true">&middot;</span> Founder &amp; CEO @ ValiqAI <span aria-hidden="true">&middot;</span> Waxhaw, North Carolina</p>
+              <p class="ab-lede pg-in">I&rsquo;m a 16-year-old founder and product builder focused on making AI work outside of demos. I like taking difficult ideas from a blank screen to a real product across web development, browser automation, and applied machine learning.</p>
+              <div class="ab-links pg-in">
+                <a href="https://www.linkedin.com/in/abhi-jandyala-7875a12a8/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">&nearr;</span></a>
+                <a href="https://www.instagram.com/abhi_jandyala/" target="_blank" rel="noopener">Instagram <span aria-hidden="true">&nearr;</span></a>
+                <a href="mailto:abhi@valiqai.com">abhi@valiqai.com</a>
               </div>
             </div>
-            <p class="project-desc">
-              AI-powered college admissions prediction. Data-driven insights
-              instead of vague advice &mdash; evaluating rigor, extracurriculars,
-              essays, and context, not just numbers.
-            </p>
-            <div class="project-tech">
-              <span>Python</span>
-              <span>Next.js</span>
-              <span>ML Models</span>
-            </div>
-          </div>
-        </article>
+          </header>
 
-        <article class="work-card" data-project="3">
-          <div class="work-card-image">
-            <img src="images/debatexai_port.png" alt="DebateXAI Screenshot" loading="lazy">
-          </div>
-          <div class="work-card-body">
-            <div class="project-header">
-              <h3 class="project-title">DebateXAI</h3>
-              <div class="project-links">
-                <a href="#project-3" class="project-link">Info</a>
-                <a href="https://debatexai.com" target="_blank" rel="noopener" class="project-link">Live</a>
+          <ul class="ab-stats pg-in" aria-label="In numbers">
+            <li><b>$50K</b><span>invested into ValiqAI&rsquo;s development</span></li>
+            <li><b>350+</b><span>students have used ChancifyAI</span></li>
+            <li><b>4&times;</b><span>hackathon winner</span></li>
+            <li><b>600</b><span>simulation runs behind every Aegis forecast</span></li>
+          </ul>
+
+          <section class="ab-block">
+            <p class="ab-label pg-in">A few things I&rsquo;ve built</p>
+            <ul class="ab-built">
+              <li class="pg-in"><strong>ValiqAI</strong><span>An autonomous QA platform that tests real web applications and returns bugs with replayable evidence.</span></li>
+              <li class="pg-in"><strong>ChancifyAI</strong><span>A college admissions prediction and guidance platform used by 350+ students.</span></li>
+              <li class="pg-in"><strong>Aegis</strong><span>A maritime intelligence platform that uses 600-run simulations to predict dark-vessel movement across 10 high-traffic regions.</span></li>
+            </ul>
+            <p class="ab-note pg-in">Shipped across autonomous QA, education, and maritime safety with Python, TypeScript, Next.js, Playwright, and applied AI.</p>
+          </section>
+
+          <section class="ab-block ab-cols">
+            <div>
+              <p class="ab-label pg-in">Experience</p>
+              <ol class="ab-timeline">
+                <li class="pg-in">
+                  <p class="ab-when">Jan 2026 &ndash; Present</p>
+                  <h3>Founder &amp; CEO, <a href="https://www.valiqai.com/" target="_blank" rel="noopener">ValiqAI</a></h3>
+                  <p>Building an autonomous QA platform as a solo technical founder: browser agents that navigate apps, discover sign-up and login flows, run tests, and capture failures with replayable evidence.</p>
+                </li>
+                <li class="pg-in">
+                  <p class="ab-when">Apr 2026 &ndash; Present</p>
+                  <h3>Co-Founder &amp; CEO, VentraMatch</h3>
+                  <p>An AI platform that matches startups with the right investors by industry, stage, check size, traction, and investment thesis.</p>
+                </li>
+                <li class="pg-in">
+                  <p class="ab-when">Dec 2025 &ndash; Present</p>
+                  <h3>AI Innovator Intern, Bright Tier Solutions</h3>
+                  <p>Built the backend parsing system for RMS, a program that creates websites for businesses in minutes. Now working on AI projects that apply machine learning to real business use cases.</p>
+                </li>
+              </ol>
+            </div>
+            <div>
+              <p class="ab-label pg-in">Education</p>
+              <div class="ab-school pg-in">
+                <p class="ab-when">Aug 2024 &ndash; Jun 2028 <span aria-hidden="true">&middot;</span> Grade 11</p>
+                <h3>Marvin Ridge High School</h3>
+                <p>Computer Science, AI, and Software Development</p>
               </div>
+              <p class="ab-sub pg-in">Clubs</p>
+              <ul class="ab-chips pg-in"><li>TSA</li><li>DECA</li><li>FBLA</li><li>HOSA</li><li>Robotics</li><li>Speech &amp; Debate</li><li>HeartsForHealing</li><li>4Kidz</li></ul>
+              <p class="ab-sub pg-in">Sports</p>
+              <ul class="ab-chips pg-in"><li>Cross Country</li><li>Track &amp; Field</li></ul>
+              <p class="ab-sub pg-in">Also</p>
+              <ul class="ab-chips pg-in"><li>Harvard AI Bootcamp</li></ul>
             </div>
-            <p class="project-desc">
-              AI debate coaching for speech &amp; debate students. Case analysis,
-              spoken delivery evaluation, and live crossfire simulation against AI.
-            </p>
-            <div class="project-tech">
-              <span>TypeScript</span>
-              <span>Speech Analysis</span>
-              <span>Real-time</span>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
+          </section>
 
-    <section id="wins" class="section wins">
-      <div class="section-label">
-        <span class="label-num">03</span>
-        <span class="label-text">Wins &amp; Hackathons</span>
-      </div>
-
-      <h2 class="section-heading wins-heading">
-        Summer 2026,
-        <span class="heading-em">San Francisco.</span>
-      </h2>
-      <p class="wins-sub">Five hackathons. Three first-place awards.</p>
-
-      <div class="wins-featured">
-        <article class="win-card win-card-first">
-          <div class="win-card-image">
-            <img src="images/agentsloveyou2_port.jpg" alt="Abhi at Agents you Love 2 Hackathon, Frontier Tower SF" loading="lazy">
-            <span class="win-badge">1st Place &times;2</span>
-          </div>
-          <div class="win-card-body">
-            <div class="win-card-top">
-              <h3 class="win-title">Agents you Love 2: Hackathon</h3>
-              <span class="win-date">Jul 2026 &mdash; SF</span>
-            </div>
-            <p class="win-desc">
-              1st Place Overall and 1st Place for the HydraDB track. Built a
-              memory-powered AI agent people actually want to use.
-            </p>
-            <a href="https://luma.com/8lez4n99" target="_blank" rel="noopener" class="win-link">Event page &#8599;</a>
-          </div>
-        </article>
-
-        <article class="win-card win-card-first">
-          <div class="win-card-image">
-            <img src="images/memorymeetsmotion_port_web.jpg" alt="Abhi receiving 1st place prize at Memory Meets Motion Hackathon" loading="lazy">
-            <span class="win-badge">1st Place</span>
-          </div>
-          <div class="win-card-body">
-            <div class="win-card-top">
-              <h3 class="win-title">Memory Meets Motion: Hackathon</h3>
-              <span class="win-date">Aug 2026 &mdash; SF</span>
-            </div>
-            <p class="win-desc">
-              1st Place for the RocketRide track. Agentic workflows and stateful
-              AI &mdash; deployed live on RocketRide Cloud.
-            </p>
-            <a href="https://luma.com/iu9svaun" target="_blank" rel="noopener" class="win-link">Event page &#8599;</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="wins-grid">
-        <article class="win-card win-card-small">
-          <div class="win-card-image">
-            <img src="images/compiled13_port.jpg" alt="c0mpiled-13 Startup School Hackathon II cover" loading="lazy">
-          </div>
-          <div class="win-card-body">
-            <div class="win-card-top">
-              <h3 class="win-title">c0mpiled-13: Startup School Hackathon II</h3>
-              <span class="win-date">Jul 2026</span>
-            </div>
-            <p class="win-desc">YC Startup School hackathon at Transpose Platform, judged by YC alumni.</p>
-            <a href="https://luma.com/olys436o" target="_blank" rel="noopener" class="win-link">Event page &#8599;</a>
-          </div>
-        </article>
-
-        <article class="win-card win-card-small">
-          <div class="win-card-image">
-            <img src="images/jachacks_port.jpg" alt="JacHacks San Francisco cover" loading="lazy">
-          </div>
-          <div class="win-card-body">
-            <div class="win-card-top">
-              <h3 class="win-title">JacHacks San Francisco</h3>
-              <span class="win-date">2026</span>
-            </div>
-            <p class="win-desc">One-day AI hackathon at Founders, Inc. backed by Google DeepMind &amp; NVIDIA.</p>
-            <a href="https://luma.com/9x1573sw" target="_blank" rel="noopener" class="win-link">Event page &#8599;</a>
-          </div>
-        </article>
-
-        <article class="win-card win-card-small">
-          <div class="win-card-image">
-            <img src="images/aipowerhour_port.jpg" alt="AI Power Hour Climate Hackathon cover" loading="lazy">
-          </div>
-          <div class="win-card-body">
-            <div class="win-card-top">
-              <h3 class="win-title">AI Power Hour Climate Hackathon</h3>
-              <span class="win-date">2026</span>
-            </div>
-            <p class="win-desc">Rapid AI development for climate solutions at 9Zero Climate Innovation Hub.</p>
-            <a href="https://luma.com/5eqj0h7v" target="_blank" rel="noopener" class="win-link">Event page &#8599;</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="wins-events">
-        <span class="wins-events-label">Also seen at</span>
-        <div class="wins-events-list">
-          <span>HumanX 2026</span>
-          <span>UC Berkeley Agentic AI Summit</span>
-          <span>AGI Advancing 2026</span>
-        </div>
-      </div>
-
-      <div class="wins-earlier">
-        <h3 class="wins-earlier-title">Earlier recognition</h3>
-        <ul class="wins-earlier-list">
-          <li><span class="earlier-year">2024</span> 1st Place, BRHS Hackathon &mdash; Data Analysis</li>
-          <li><span class="earlier-year">2024</span> 4th Place, NC 8th Congressional App Challenge</li>
-          <li><span class="earlier-year">2024</span> Harvard Computer Society AI Bootcamp &mdash; Selected Participant</li>
-          <li><span class="earlier-year">2024</span> NASA Space Apps Challenge &mdash; Team Lead</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="about" class="section about">
-      <div class="section-label">
-        <span class="label-num">04</span>
-        <span class="label-text">About</span>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-main">
-          <h2 class="section-heading">
-            I fell in love with
-            <span class="heading-em">AI</span>
-            two years ago.
-          </h2>
-          <div class="about-text">
-            <p>
-              I've been coding for years, but when AI for coding and CS rose two years ago,
-              that's when everything clicked. Now I'm deep into ML, deep learning, LLMs,
-              and building full-stack SaaS products.
-            </p>
-            <p>
-              There are so many places where AI can be added or enhanced, and people can
-              genuinely benefit from it. Despite my age, I'm going to make that my life's mission.
-              I'm 16, still in high school at Marvin Ridge (Class of 2028), and I'm not waiting
-              around to start &mdash; this summer alone I flew out to San Francisco and won
-              three first-place awards across five hackathons.
-            </p>
-          </div>
-        </div>
-
-        <div class="about-sidebar">
-          <div class="info-card">
-            <h3 class="info-card-title">Things I Know</h3>
-            <ul class="info-list">
-              <li>Machine Learning</li>
-              <li>Deep Learning</li>
-              <li>Large Language Models</li>
-              <li>Full Stack Development</li>
-              <li>SaaS Architecture</li>
-              <li>Data Analysis</li>
+          <section class="ab-block">
+            <p class="ab-label pg-in">Skills</p>
+            <ul class="ab-chips ab-chips--big pg-in">
+              <li class="is-top">Machine Learning</li><li class="is-top">Artificial Intelligence</li><li class="is-top">Retrieval-Augmented Generation</li><li class="is-top">Python</li>
+              <li>TypeScript</li><li>Next.js</li><li>Playwright</li><li>Generative AI</li><li>Reinforcement Learning</li><li>Computer Vision</li><li>Anomaly Detection</li><li>Predictive Modeling</li><li>Geospatial Data</li><li>Data Modeling</li><li>Scientific Computing</li><li>3D Visualization</li><li>Algorithms</li>
             </ul>
-          </div>
+          </section>
 
-          <div class="info-card">
-            <h3 class="info-card-title">Things I've Done</h3>
-            <ul class="info-list">
-              <li>1st Place Overall, Agents you Love 2 (SF, 2026)</li>
-              <li>1st Place, HydraDB track (SF, 2026)</li>
-              <li>1st Place, RocketRide track — Memory Meets Motion (SF, 2026)</li>
-              <li>Shipped 3 live products</li>
-              <li>NASA Space Apps Challenge Team Lead</li>
-              <li>Harvard CS AI Bootcamp Participant</li>
-            </ul>
-          </div>
-        </div>
+          <footer class="ab-end pg-in">
+            <p class="ab-label">Currently</p>
+            <h3>Building ValiqAI into a product real engineering teams can trust.</h3>
+            <p>Always open to meeting founders, engineers, and people building ambitious things with AI.</p>
+            <a class="ab-cta" href="mailto:abhi@valiqai.com">Say hi <span aria-hidden="true">&rarr;</span></a>
+          </footer>
+        </article>
       </div>
-
-      <div class="stack-section">
-        <h3 class="stack-title">Stack</h3>
-        <div class="stack-carousel">
-          <div class="stack-track">
-            <div class="stack-item" data-name="Python">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-              <span>Python</span>
-            </div>
-            <div class="stack-item" data-name="TypeScript">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
-              <span>TypeScript</span>
-            </div>
-            <div class="stack-item" data-name="JavaScript">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-              <span>JavaScript</span>
-            </div>
-            <div class="stack-item" data-name="React">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-              <span>React</span>
-            </div>
-            <div class="stack-item" data-name="Next.js">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="invert">
-              <span>Next.js</span>
-            </div>
-            <div class="stack-item" data-name="Node.js">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-              <span>Node.js</span>
-            </div>
-            <div class="stack-item" data-name="Three.js">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" alt="Three.js" class="invert">
-              <span>Three.js</span>
-            </div>
-            <div class="stack-item" data-name="TensorFlow">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
-              <span>TensorFlow</span>
-            </div>
-            <div class="stack-item" data-name="PyTorch">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
-              <span>PyTorch</span>
-            </div>
-            <div class="stack-item" data-name="OpenAI">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="openai-icon"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08-4.778 2.758a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z"/></svg>
-              <span>OpenAI</span>
-            </div>
-            <!-- Duplicate for infinite loop -->
-            <div class="stack-item" data-name="Python">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-              <span>Python</span>
-            </div>
-            <div class="stack-item" data-name="TypeScript">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
-              <span>TypeScript</span>
-            </div>
-            <div class="stack-item" data-name="JavaScript">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
-              <span>JavaScript</span>
-            </div>
-            <div class="stack-item" data-name="React">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-              <span>React</span>
-            </div>
-            <div class="stack-item" data-name="Next.js">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" class="invert">
-              <span>Next.js</span>
-            </div>
-            <div class="stack-item" data-name="Node.js">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
-              <span>Node.js</span>
-            </div>
-            <div class="stack-item" data-name="Three.js">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" alt="Three.js" class="invert">
-              <span>Three.js</span>
-            </div>
-            <div class="stack-item" data-name="TensorFlow">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
-              <span>TensorFlow</span>
-            </div>
-            <div class="stack-item" data-name="PyTorch">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
-              <span>PyTorch</span>
-            </div>
-            <div class="stack-item" data-name="OpenAI">
-              <svg viewBox="0 0 24 24" fill="currentColor" class="openai-icon"><path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08-4.778 2.758a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z"/></svg>
-              <span>OpenAI</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <button class="pg-back" type="button"><span aria-hidden="true">&larr;</span> Back</button>
     </section>
 
-    <section id="contact" class="section contact">
-      <div class="contact-content">
-        <h2 class="contact-heading">
-          <span>Work with</span>
-          <span class="heading-em">me.</span>
-        </h2>
-        <p class="contact-desc">
-          Building something with AI? Hiring? Judging a hackathon I should be at?
-        </p>
-        <a href="mailto:abhijandyala@gmail.com" class="contact-email">
-          abhijandyala@gmail.com
-        </a>
-        <div class="contact-cta">
-          <a href="mailto:abhijandyala@gmail.com" class="btn-primary">
-            <span>Email me</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M7 17L17 7M17 7H7M17 7V17"/>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/abhiraag-jandyala-7875a12a8/" target="_blank" rel="noopener" class="btn-secondary">Connect on LinkedIn</a>
-        </div>
-        <div class="contact-socials">
-          <a href="https://github.com/abhijandyala" target="_blank" rel="noopener" class="social">GitHub</a>
-          <a href="https://www.linkedin.com/in/abhiraag-jandyala-7875a12a8/" target="_blank" rel="noopener" class="social">LinkedIn</a>
-          <a href="https://x.com/abhijandyala" target="_blank" rel="noopener" class="social">X</a>
-          <a href="https://www.instagram.com/abhi_jandyala/" target="_blank" rel="noopener" class="social">Instagram</a>
+    <section class="pg ct" id="contact" data-page="contact" role="dialog" aria-modal="true" aria-labelledby="ct-title" hidden>
+      <div class="pg-scroll">
+        <div class="ct-page">
+          <header class="ct-head">
+            <p class="ct-label pg-in">Contact</p>
+            <h2 class="ct-title pg-in" id="ct-title">Let&rsquo;s build something.</h2>
+            <p class="ct-lede pg-in">Founders, engineers, and anyone building ambitious things with AI: my inbox is open.</p>
+          </header>
+          <ul class="ct-list">
+              <li class="pg-in">
+                <a class="ct-row" href="mailto:abhijandyala@gmail.com"><span class="ct-k">Email</span><span class="ct-v">abhijandyala@gmail.com</span><span class="ct-go" aria-hidden="true">&nearr;</span></a>
+                <button class="ct-copy" type="button" data-copy="abhijandyala@gmail.com" aria-label="Copy abhijandyala@gmail.com">Copy</button>
+              </li>
+              <li class="pg-in">
+                <a class="ct-row" href="mailto:abhi@valiqai.com"><span class="ct-k">ValiqAI</span><span class="ct-v">abhi@valiqai.com</span><span class="ct-go" aria-hidden="true">&nearr;</span></a>
+                <button class="ct-copy" type="button" data-copy="abhi@valiqai.com" aria-label="Copy abhi@valiqai.com">Copy</button>
+              </li>
+              <li class="pg-in">
+                <a class="ct-row" href="https://www.linkedin.com/in/abhi-jandyala-7875a12a8/" target="_blank" rel="noopener"><span class="ct-k">LinkedIn</span><span class="ct-v">in/abhi-jandyala</span><span class="ct-go" aria-hidden="true">&nearr;</span></a>
+              </li>
+              <li class="pg-in">
+                <a class="ct-row" href="https://github.com/abhijandyala" target="_blank" rel="noopener"><span class="ct-k">GitHub</span><span class="ct-v">@abhijandyala</span><span class="ct-go" aria-hidden="true">&nearr;</span></a>
+              </li>
+              <li class="pg-in">
+                <a class="ct-row" href="https://www.instagram.com/abhi_jandyala" target="_blank" rel="noopener"><span class="ct-k">Instagram</span><span class="ct-v">@abhi_jandyala</span><span class="ct-go" aria-hidden="true">&nearr;</span></a>
+              </li>
+              <li class="pg-in">
+                <a class="ct-row" href="https://www.instagram.com/abhij_journey" target="_blank" rel="noopener"><span class="ct-k">Personal brand</span><span class="ct-v">@abhij_journey</span><span class="ct-go" aria-hidden="true">&nearr;</span></a>
+              </li>
+          </ul>
         </div>
       </div>
+      <p class="ct-toast" role="status" aria-live="polite"></p>
+      <button class="pg-back" type="button"><span aria-hidden="true">&larr;</span> Back</button>
     </section>
   </main>
 
-  <!-- Project Info Modals -->
-  <div class="modal" id="project-1">
-    <div class="modal-backdrop"></div>
-    <div class="modal-content">
-      <button class="modal-close">&times;</button>
-      <div class="modal-header">
-        <span class="modal-num">01</span>
-        <h2 class="modal-title">ValiqAI</h2>
-      </div>
-      <div class="modal-body">
-        <div class="modal-section">
-          <h3>Overview</h3>
-          <p>AI coding tools generate features and apps fast, but a lot of that code only looks finished. The UI appears polished, buttons exist, flows seem complete, but the product still has broken logic, silent failures, and accessibility issues. ValiqAI catches the gap between code that appears to work and code that truly works.</p>
-        </div>
-        <div class="modal-section">
-          <h3>The Problem</h3>
-          <p>Traditional testing tools assume developers will write scripts and maintain tests over time. ValiqAI is built for the opposite: people shipping fast with AI who need validation without extra setup. It's the trust layer for AI-built software.</p>
-        </div>
-        <div class="modal-section">
-          <h3>Tech Stack</h3>
-          <div class="modal-tech">
-            <span>TypeScript</span>
-            <span>Next.js</span>
-            <span>Playwright</span>
-            <span>OpenAI</span>
-            <span>Node.js</span>
-          </div>
-        </div>
-        <div class="modal-section">
-          <h3>Key Features</h3>
-          <ul class="modal-list">
-            <li>Automated product scanning from a single URL</li>
-            <li>AI-powered detection of UX, accessibility, and logic issues</li>
-            <li>No test scripts required</li>
-            <li>Reports prioritized by real user impact</li>
-          </ul>
-        </div>
-      </div>
-      <div class="modal-actions">
-        <a href="https://valiqai.com" target="_blank" rel="noopener" class="btn-primary">
-          <span>View Live</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M7 17L17 7M17 7H7M17 7V17"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="project-2">
-    <div class="modal-backdrop"></div>
-    <div class="modal-content">
-      <button class="modal-close">&times;</button>
-      <div class="modal-header">
-        <span class="modal-num">02</span>
-        <h2 class="modal-title">ChancifyAI</h2>
-      </div>
-      <div class="modal-body">
-        <div class="modal-section">
-          <h3>Overview</h3>
-          <p>AI-powered college admissions prediction platform. Instead of vague advice like "you have a good shot," it provides structured evaluation backed by real data. Makes the process more understandable for students who don't have access to private counselors.</p>
-        </div>
-        <div class="modal-section">
-          <h3>How It Works</h3>
-          <p>The platform looks beyond GPA and test scores. It evaluates academics, course rigor, extracurricular depth, leadership, awards, project quality, and essays. Strong applicants aren't just defined by numbers. Context matters. Initiative matters. Impact matters.</p>
-        </div>
-        <div class="modal-section">
-          <h3>Tech Stack</h3>
-          <div class="modal-tech">
-            <span>Python</span>
-            <span>Next.js</span>
-            <span>TensorFlow</span>
-            <span>PostgreSQL</span>
-          </div>
-        </div>
-        <div class="modal-section">
-          <h3>Key Features</h3>
-          <ul class="modal-list">
-            <li>Hybrid prediction using statistical reasoning</li>
-            <li>Essay and profile feedback</li>
-            <li>Nuanced evaluation of extracurriculars</li>
-            <li>Actionable strategy insights</li>
-          </ul>
-        </div>
-      </div>
-      <div class="modal-actions">
-        <a href="https://chancifyai.com" target="_blank" rel="noopener" class="btn-primary">
-          <span>View Live</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M7 17L17 7M17 7H7M17 7V17"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="project-3">
-    <div class="modal-backdrop"></div>
-    <div class="modal-content">
-      <button class="modal-close">&times;</button>
-      <div class="modal-header">
-        <span class="modal-num">03</span>
-        <h2 class="modal-title">DebateXAI</h2>
-      </div>
-      <div class="modal-body">
-        <div class="modal-section">
-          <h3>Overview</h3>
-          <p>AI debate coaching and grading platform for speech and debate students, especially Public Forum. Acts like a digital coach, providing personalized feedback in a space where coaching is often limited or unavailable outside of tournaments.</p>
-        </div>
-        <div class="modal-section">
-          <h3>What Makes It Different</h3>
-          <p>Multiple layers: written case analysis with scoring on claim clarity and persuasiveness. Spoken performance evaluation that catches hesitation, pacing, and relevance. Live crossfire simulation where the system engages in back-and-forth practice.</p>
-        </div>
-        <div class="modal-section">
-          <h3>Tech Stack</h3>
-          <div class="modal-tech">
-            <span>TypeScript</span>
-            <span>Next.js</span>
-            <span>Speech-to-Text</span>
-            <span>OpenAI</span>
-          </div>
-        </div>
-        <div class="modal-section">
-          <h3>Key Features</h3>
-          <ul class="modal-list">
-            <li>Written case analysis with structure scoring</li>
-            <li>Speech pattern evaluation</li>
-            <li>Live crossfire simulation against AI</li>
-            <li>On-demand practice anywhere</li>
-          </ul>
-        </div>
-      </div>
-      <div class="modal-actions">
-        <a href="https://debatexai.com" target="_blank" rel="noopener" class="btn-primary">
-          <span>View Live</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M7 17L17 7M17 7H7M17 7V17"/>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-content">
-      <span>2026 Abhi Jandyala</span>
-      <div class="footer-socials">
-        <a href="https://github.com/abhijandyala" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/abhiraag-jandyala-7875a12a8/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://x.com/abhijandyala" target="_blank" rel="noopener">X</a>
-      </div>
-      <span>Built with obsessive attention to detail</span>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
+  <script src="intro.js"></script>
+  <script src="gallery.js"></script>
+  <script src="sftrip.js"></script>
+  <script src="projects.js"></script>
+  <script src="achievements.js"></script>
+  <script src="page.js"></script>
 </body>
 </html>

@@ -1,0 +1,222 @@
+{
+  "achievements": [
+    {
+      "id": "memorymeetsmotion",
+      "rank": "1st",
+      "title": "Best Use of RocketRide",
+      "event": "Memory Meets Motion Hackathon",
+      "date": "Aug 2026",
+      "card": "assets/achievements/mmm-card.jpg",
+      "hero": "assets/achievements/mmm-hero.jpg",
+      "heroCaption": "Accepting the Best Use of RocketRide award at Frontier Tower",
+      "theme": {
+        "bg": "#0e0c1a",
+        "fg": "#f1eefb",
+        "muted": "rgba(241, 238, 251, 0.62)",
+        "accent": "#a594ff"
+      },
+      "oneliner": "1st in the RocketRide track for Runbook, an AI incident-response agent.",
+      "summary": "Won 1st Place in the RocketRide track (Best Use of RocketRide) at the Memory Meets Motion Hackathon at Frontier Tower in San Francisco on August 3, where developers spent the day shipping agentic workflows and stateful AI.",
+      "bullets": [
+        "Built Runbook, an AI-powered incident response platform that connects communication, project management, and development tools into one workflow.",
+        "When a customer reports an issue in Slack, Runbook investigates it using company knowledge and previous incidents, identifies what went wrong, and recommends a fix.",
+        "It creates a Linear ticket, prepares a draft GitHub pull request, and sends an update back to the customer, with RocketRide running the diagnosis and a human approving the fix."
+      ],
+      "links": [
+        {
+          "label": "Event page",
+          "url": "https://luma.com/iu9svaun",
+          "primary": true
+        },
+        {
+          "label": "RocketRide",
+          "url": "https://rocketride.ai/"
+        }
+      ]
+    },
+    {
+      "id": "agentsloveyou2",
+      "rank": "2× 1st",
+      "title": "2× 1st Place",
+      "event": "Agents Love You 2 Hackathon",
+      "date": "Jul 2026",
+      "card": "assets/achievements/agents-card.jpg",
+      "hero": "assets/achievements/agents-hero.jpg",
+      "theme": {
+        "bg": "#07130f",
+        "fg": "#eef7f4",
+        "muted": "rgba(238, 247, 244, 0.62)",
+        "accent": "#38b2a0"
+      },
+      "oneliner": "1st Overall and 1st in the HydraDB Challenge for GhostThread.",
+      "summary": "Won 1st Place Overall and 1st Place in the HydraDB Challenge at the Agents Love You 2 Hackathon in San Francisco with Suvan Kasina, building GhostThread. The event was sponsored by RocketRide, HydraDB, Synx, Pipeshift, and InsForge.",
+      "awards": [
+        {
+          "place": "1st Place",
+          "label": "Overall"
+        },
+        {
+          "place": "1st Place",
+          "label": "HydraDB Challenge"
+        }
+      ],
+      "video": {
+        "title": "GhostThread: demo video",
+        "youtube": "glwMQffAe0c",
+        "thumb": "assets/projects/ghostthread/demo-thumb.jpg"
+      },
+      "links": [
+        {
+          "label": "Event page",
+          "url": "https://luma.com/8lez4n99",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "usaii",
+      "rank": "15th",
+      "title": "15th Place Globally",
+      "event": "USAII Global AI Hackathon",
+      "date": "Jun 2026",
+      "card": "assets/achievements/usaii-card.jpg",
+      "hero": "assets/achievements/usaii-hero.jpg",
+      "theme": {
+        "bg": "#0b1a2e",
+        "fg": "#f6f1e4",
+        "muted": "rgba(246, 241, 228, 0.62)",
+        "accent": "#d7b56d"
+      },
+      "oneliner": "15th worldwide out of 6,000+ registrations from 160+ countries.",
+      "summary": "Placed 15th globally at the USAII Global AI Hackathon 2026, a competition with 6,000+ registrations from 160+ countries.",
+      "bullets": [
+        "Advanced to the Final Round at the High School Level.",
+        "Certificate of Finalist from the United States Artificial Intelligence Institute (USAII)."
+      ],
+      "links": [
+        {
+          "label": "USAII Global AI Hackathon",
+          "url": "https://aihackathon.usaii.org/",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "fbla",
+      "rank": "4th",
+      "title": "4th at Nationals",
+      "event": "FBLA · Computer Game & Simulation",
+      "date": "Jun 2026",
+      "card": "assets/achievements/fbla-card.jpg",
+      "hero": "assets/achievements/fbla-hero.jpg",
+      "heroCaption": "Internal look",
+      "theme": {
+        "bg": "#0c0f1a",
+        "fg": "#eef1fb",
+        "muted": "rgba(238, 241, 251, 0.62)",
+        "accent": "#f2b632"
+      },
+      "oneliner": "4th in the nation in Computer Game & Simulation with VOCA, a Roblox career game.",
+      "summary": "Placed 4th at the Future Business Leaders of America (FBLA) National Leadership Conference in Computer Game & Simulation with VOCA, a Roblox game where players try out careers like aviation, culinary, healthcare, and cybersecurity to find their best fit.",
+      "video": {
+        "src": "assets/achievements/fbla-video.mp4",
+        "poster": "assets/achievements/fbla-poster.jpg",
+        "title": "VOCA: gameplay"
+      },
+      "links": [
+        {
+          "label": "FBLA competitive events",
+          "url": "https://www.fbla.org/high-school/competitive-events/",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "tsa",
+      "rank": "State",
+      "title": "State Champion",
+      "event": "TSA · Digital Video Production",
+      "date": "Apr 2026",
+      "card": "assets/achievements/tsa-card.jpg",
+      "theme": {
+        "bg": "#140b0b",
+        "fg": "#fbefe9",
+        "muted": "rgba(251, 239, 233, 0.62)",
+        "accent": "#e8573f"
+      },
+      "oneliner": "Won state in Digital Video Production with “Twisted In Time With Mr. Tesla.”",
+      "summary": "State Champion in Digital Video Production at the Technology Student Association (TSA) state conference.",
+      "video": {
+        "youtube": "PSZws1XwpKU",
+        "title": "Twisted In Time With Mr. Tesla: the video that won",
+        "thumb": "assets/achievements/tsa-thumb.jpg"
+      },
+      "links": [
+        {
+          "label": "TSA competitions",
+          "url": "https://tsaweb.org/competitions",
+          "primary": true
+        }
+      ]
+    },
+    {
+      "id": "cac",
+      "rank": "4th",
+      "title": "4th Place, CD14",
+      "event": "Congressional App Challenge",
+      "date": "Oct 2025",
+      "card": "assets/projects/chancify/card.jpg",
+      "hero": "assets/projects/chancify/hero.jpg",
+      "theme": {
+        "bg": "#eaf2ff",
+        "fg": "#0f2350",
+        "muted": "rgba(15, 35, 80, 0.66)",
+        "accent": "#296ef0",
+        "shadow": "rgba(15, 35, 80, 0.18)"
+      },
+      "oneliner": "4th in Congressional District 14 with ChancifyAI.",
+      "summary": "Placed 4th in Congressional District 14 (CD14) in the Congressional App Challenge, run by the U.S. House of Representatives, with ChancifyAI, the #1 AI college admissions predictor.",
+      "links": [
+        {
+          "label": "Visit chancifyai.com",
+          "url": "https://www.chancifyai.com/",
+          "primary": true
+        },
+        {
+          "label": "Congressional App Challenge",
+          "url": "https://www.congressionalappchallenge.us/"
+        }
+      ],
+      "video": {
+        "title": "ChancifyAI: demo video",
+        "youtube": "zDyCpdLhIVY",
+        "thumb": "assets/projects/chancify/demo-thumb.jpg"
+      }
+    },
+    {
+      "id": "brhs",
+      "rank": "1st",
+      "title": "1st Place, Data Analysis",
+      "event": "BRHS Hackathon",
+      "date": "Jul 2025",
+      "theme": {
+        "bg": "#0d1240",
+        "fg": "#eef1ff",
+        "muted": "rgba(238, 241, 255, 0.64)",
+        "accent": "#5ce1f0"
+      },
+      "oneliner": "First place in the Data Analysis category.",
+      "summary": "Won 1st Place in the Data Analysis category at RidgeHacks, the BRHS Hackathon run by the Ridge Computer Science Club.",
+      "card": "assets/achievements/brhs-card.jpg",
+      "hero": "assets/achievements/brhs-hero.jpg",
+      "heroNarrow": true,
+      "links": [
+        {
+          "label": "Visit ridgehacks.us",
+          "url": "https://ridgehacks.us/",
+          "primary": true
+        }
+      ]
+    }
+  ]
+}
