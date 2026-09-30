@@ -25,7 +25,17 @@ function reelGallery(id, name, ASSETS) {
     sequence: true,                 // Day 1 -> Day 2 -> ... arrows, Start / End tags
     root,
     load: () => fetch(ASSETS + 'clips.json').then((r) => r.json()).then((m) => m.clips),
-    cardSize: (W, H) => {
+    cardSize: (W, H, n) => {
+      // phones: pick the grid first (4 columns for long trips), then the largest card where every
+      // column fits across and every row (card + caption + gap) fits down the screen
+      if (W < 600) {
+        const cols = n > 9 ? 4 : 3, rows = Math.ceil(n / cols), side = Math.max(20, W * 0.06);
+        const byWidth = (W - side * 2 + 22) / cols - 32;
+        const byHeight = ((H - 160) / rows - 70) * 9 / 16;
+        const cw = Math.floor(Math.max(40, Math.min(76, byWidth, byHeight)));
+        const overhang = Math.round(Math.max(0, Math.min(30, (W - side * 2) / cols - cw - 16)));   // stop short of the next card
+        return { cw, ch: Math.round(cw * 16 / 9), title: 46, overhang, cols };
+      }
       const cw = Math.round(Math.min(132, Math.max(64, Math.min(W * 0.085, H * 0.13))));
       return { cw, ch: Math.round(cw * 16 / 9) };
     },

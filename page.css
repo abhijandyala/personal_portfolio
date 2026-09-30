@@ -81,3 +81,16 @@
     transition-delay: 0s;
   }
 }
+
+/* content scrolls under a soft white fade behind the Back button */
+.pg::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  height: 72px;
+  background: linear-gradient(#fff 45%, rgba(255, 255, 255, 0));
+  pointer-events: none;
+}

@@ -67,6 +67,11 @@
     load: () => fetch('assets/projects/projects.json').then((r) => r.json()).then((d) =>
       d.projects.map((p) => ({ ...p, sub: p.dates || p.tagline, desc: p.oneliner ? esc(p.oneliner) : '' }))),
     cardSize: (W, H) => {
+      // phones: two narrower columns and a short caption (name + date, no one-liner) so nothing overlaps
+      if (W < 600) {
+        const cw = Math.round(Math.min(170, Math.max(130, Math.min(W * 0.4, H * 0.21))));
+        return { cw, ch: Math.round(cw * 0.625), title: 48 };
+      }
       const cw = Math.round(Math.min(380, Math.max(200, Math.min(W * 0.26, H * 0.62))));
       return { cw, ch: Math.round(cw * 0.625) };        // 16:10
     },

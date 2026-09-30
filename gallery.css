@@ -334,3 +334,17 @@
     transition-duration: 0.01s;
   }
 }
+
+/* phones: captions stay short enough to fit the smaller cards */
+@media (max-width: 599px) {
+  .pj .ng-card-desc {
+    display: none;             /* Projects + Achievements: name and date only */
+  }
+  .sf .ng-card-title {
+    max-width: calc(var(--cw) + var(--overhang, 0px));   /* set by gallery.js to match the layout */
+  }
+  .sf .ng-card-title strong {
+    font-size: 9px;
+    letter-spacing: 0.05em;
+  }
+}

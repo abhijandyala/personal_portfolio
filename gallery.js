@@ -12,7 +12,8 @@
  *   createNodeGallery({
  *     name, root,                       // root: section with .ng-stage > svg.ng-links, and .ng-back
  *     load: async () => items,          // [{ id, title, sub? }, ...]
- *     cardSize: (W, H) => ({ cw, ch, title? }),   // title: overrides titleSpace at this size
+ *     cardSize: (W, H, n) => ({ cw, ch, title?, overhang?, cols? }),   // n = item count; title overrides
+ *                                       // titleSpace; overhang = caption wider than the card; cols fixes the grid
  *     titleSpace,                       // px reserved under a card for its title block
  *     cardMedia: (item) => html,        // inside .ng-card-media
  *     label: (item) => aria label,
@@ -36,7 +37,7 @@
     const svg = root.querySelector('.ng-links');
     const backBtn = root.querySelector('.ng-back');
     const GAP = 22;                  // minimum space between cards (also covers the idle drift)
-    let TITLE_H = cfg.titleSpace ?? 44;
+    let TITLE_H = cfg.titleSpace ?? 44, OVERHANG = 0, COLS = 0;
 
     let items = [];
     let cards = [], dots = [], edges = [], seq = [];
@@ -54,9 +55,12 @@
     function measure() {
       W = innerWidth;
       H = innerHeight;
-      const size = cfg.cardSize(W, H);
+      const size = cfg.cardSize(W, H, items.length);
       ({ cw, ch } = size);
       TITLE_H = size.title ?? cfg.titleSpace ?? 44;
+      OVERHANG = size.overhang ?? 0;     // caption wider than the card by this much (kept on screen)
+      COLS = size.cols ?? 0;             // optional fixed column count
+      root.style.setProperty('--overhang', OVERHANG + 'px');
       root.style.setProperty('--cw', cw + 'px');
       root.style.setProperty('--ch', ch + 'px');
     }
@@ -65,17 +69,17 @@
     function homes(n) {
       const top = cfg.sequence ? 116 : 84, bottom = 44, side = Math.max(20, W * 0.06);   // room for the Start tag
       const fit = Math.max(1, Math.floor((W - side * 2 + GAP) / (cw + GAP + 10)));   // cards that fit across
-      const cols = Math.min(n, W / H > 1.15 ? 4 : 3, fit);
+      const cols = COLS ? Math.min(n, COLS) : Math.min(n, W / H > 1.15 ? 4 : 3, fit);
       const rows = Math.ceil(n / cols);
       const cellW = (W - side * 2) / cols, cellH = (H - top - bottom) / rows;
       const jx = Math.max(0, (cellW - cw) / 2) * 0.95, jy = Math.max(0, (cellH - ch - 24) / 2) * 0.95;
       const out = [];
       for (let i = 0; i < n; i++) {
         const r = Math.floor(i / cols), c = cfg.sequence && r % 2 ? cols - 1 - (i % cols) : i % cols;   // a sequence snakes
-        const shift = n > cols ? (r % 2 ? 0.22 : -0.1) * cellW : 0;   // stagger rows so it reads as a web, not a table
+        const shift = n > cols && !COLS ? (r % 2 ? 0.22 : -0.1) * cellW : 0;   // stagger rows so it reads as a web, not a table (not in a fixed phone grid)
         const jitter = n > 2 ? (cfg.sequence ? 0.4 : 1) : 0.25;   // a sequence stays evenly spaced so its arrows read
         out.push({
-          x: clamp(side + cellW * (c + 0.5) + shift + (Math.random() * 2 - 1) * jx * jitter, cw / 2 + 12, W - cw / 2 - 12),
+          x: clamp(side + cellW * (c + 0.5) + shift + (Math.random() * 2 - 1) * jx * jitter, cw / 2 + 12, W - cw / 2 - 12 - OVERHANG),
           // centre the card + caption block in its cell, and keep the caption on screen
           y: clamp(top + cellH * (r + 0.5) - TITLE_H / 2 + (Math.random() * 2 - 1) * jy * jitter, top + ch / 2, H - ch / 2 - TITLE_H - 16),
         });
@@ -206,7 +210,7 @@
     const box = (x, y) => ({ x, y: y + TITLE_H / 2, hw: cw / 2 + GAP / 2, hh: ch / 2 + TITLE_H / 2 + GAP / 2 });
 
     function clampHome(c) {
-      c.hx = clamp(c.hx, cw / 2 + 10, W - cw / 2 - 10);
+      c.hx = clamp(c.hx, cw / 2 + 10, W - cw / 2 - 10 - OVERHANG);
       c.hy = clamp(c.hy, (cfg.sequence ? 96 : 64) + ch / 2, H - ch / 2 - TITLE_H - 8);
     }
 
